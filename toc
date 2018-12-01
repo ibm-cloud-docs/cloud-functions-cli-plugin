@@ -1,0 +1,7 @@
+{:navgroup: .navgroup}
+{:topicgroup: .topicgroup}
+
+{: .toc subcollection="cloud-functions" audience="compute" href="/docs/cloud-functions-cli-plugin/functions-cli.html" path="cloud-functions-cli-plugin"}
+IBM Cloud Functions CLI reference
+
+    functions-cli.md

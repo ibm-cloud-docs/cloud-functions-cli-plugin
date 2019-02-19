@@ -14,7 +14,7 @@ lastupdated: "2018-09-13"
 {:tip: .tip}
 
 # {{site.data.keyword.openwhisk_short}} CLI plug-in
-{: #functions_cli}
+{: #cloudfunctions_cli}
 
 
 {{site.data.keyword.openwhisk}} offers a powerful plug-in for the {{site.data.keyword.Bluemix_notm}} CLI that allows complete management of the {{site.data.keyword.openwhisk_short}} system. You can use {{site.data.keyword.openwhisk_short}} CLI plug-in to manage your code snippets in actions, create triggers and rules to enable your actions to respond to events, and bundle actions into packages. For more information about {{site.data.keyword.openwhisk_short}}, see the [documentation](/docs/openwhisk/bluemix_cli.html).

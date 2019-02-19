@@ -14,7 +14,7 @@ lastupdated: "2018-09-13"
 {:tip: .tip}
 
 # {{site.data.keyword.openwhisk_short}} CLI plug-in
-{: #functions_cli}
+{: #cloudfunctions_cli}
 
 
 {{site.data.keyword.openwhisk}} offers a powerful plug-in for the {{site.data.keyword.Bluemix_notm}} CLI that allows complete management of the {{site.data.keyword.openwhisk_short}} system. You can use {{site.data.keyword.openwhisk_short}} CLI plug-in to manage your code snippets in actions, create triggers and rules to enable your actions to respond to events, and bundle actions into packages. For more information about {{site.data.keyword.openwhisk_short}}, see the [documentation](/docs/openwhisk/bluemix_cli.html).
@@ -84,10 +84,10 @@ Download and install the {{site.data.keyword.openwhisk_short}} plug-in.
 
 You can use the {{site.data.keyword.openwhisk_short}} CLI plug-in to:
 
-* Run your code snippets, or actions, on {{site.data.keyword.openwhisk_short}}. See [Creating and invoking actions](/docs/openwhisk_actions.html).
-* Use triggers and rules to enable your actions to respond to events. See [Creating triggers and rules](/docs/openwhisk_triggers_rules.html).
-* Learn how packages bundle actions and configure external events sources. See [Create and use packages](/docs/openwhisk_packages.html).
-* Explore the catalog of packages and enhance your applications with external services, such as a [{{site.data.keyword.cloudant}} event source](/docs/openwhisk_cloudant.html).
+* Run your code snippets, or actions, on {{site.data.keyword.openwhisk_short}}. See [Creating and invoking actions](/docs/openwhisk/openwhisk_actions.html).
+* Use triggers and rules to enable your actions to respond to events. See [Creating triggers and rules](/docs/openwhisk/openwhisk_triggers_rules.html).
+* Learn how packages bundle actions and configure external events sources. See [Create and use packages](/docs/openwhisk/openwhisk_packages.html).
+* Explore the catalog of packages and enhance your applications with external services, such as a [{{site.data.keyword.cloudant}} event source](/docs/openwhisk/openwhisk_cloudant.html).
 
 To list of commands for the {{site.data.keyword.openwhisk_short}} plug-in, run `ibmcloud fn` with no arguments.
 {: tip}

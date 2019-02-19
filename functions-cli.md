@@ -17,7 +17,7 @@ lastupdated: "2018-09-13"
 {: #cloudfunctions_cli}
 
 
-{{site.data.keyword.openwhisk}} offers a powerful plug-in for the {{site.data.keyword.Bluemix_notm}} CLI that allows complete management of the {{site.data.keyword.openwhisk_short}} system. You can use {{site.data.keyword.openwhisk_short}} CLI plug-in to manage your code snippets in actions, create triggers and rules to enable your actions to respond to events, and bundle actions into packages. For more information about {{site.data.keyword.openwhisk_short}}, see the [documentation](/docs/openwhisk/bluemix_cli.html).
+{{site.data.keyword.openwhisk}} offers a powerful plug-in for the {{site.data.keyword.Bluemix_notm}} CLI that allows complete management of the {{site.data.keyword.openwhisk_short}} system. You can use {{site.data.keyword.openwhisk_short}} CLI plug-in to manage your code snippets in actions, create triggers and rules to enable your actions to respond to events, and bundle actions into packages. For more information about {{site.data.keyword.openwhisk_short}}, see the [documentation](/docs/openwhisk?topic=cloud-functions-cloudfunctions_cli).
 {:shortdesc}
 
 You can now use the alias `fn` in your {{site.data.keyword.openwhisk_short}} plug-in commands: `ibmcloud fn <command>`
@@ -84,10 +84,10 @@ Download and install the {{site.data.keyword.openwhisk_short}} plug-in.
 
 You can use the {{site.data.keyword.openwhisk_short}} CLI plug-in to:
 
-* Run your code snippets, or actions, on {{site.data.keyword.openwhisk_short}}. See [Creating and invoking actions](/docs/openwhisk/openwhisk_actions.html).
-* Use triggers and rules to enable your actions to respond to events. See [Creating triggers and rules](/docs/openwhisk/openwhisk_triggers_rules.html).
-* Learn how packages bundle actions and configure external events sources. See [Create and use packages](/docs/openwhisk/openwhisk_packages.html).
-* Explore the catalog of packages and enhance your applications with external services, such as a [{{site.data.keyword.cloudant}} event source](/docs/openwhisk/openwhisk_cloudant.html).
+* Run your code snippets, or actions, on {{site.data.keyword.openwhisk_short}}. See [Creating and invoking actions](/docs/openwhisk?topic=cloud-functions-openwhisk_actions).
+* Use triggers and rules to enable your actions to respond to events. See [Creating triggers and rules](/docs/openwhisk?topic=cloud-functions-openwhisk_triggers).
+* Learn how packages bundle actions and configure external events sources. See [Create and use packages](/docs/openwhisk?topic=cloud-functions-openwhisk_packages).
+* Explore the catalog of packages and enhance your applications with external services, such as a [{{site.data.keyword.cloudant}} event source](/docs/openwhisk?topic=cloud-functions-openwhisk_cloudant).
 
 To list of commands for the {{site.data.keyword.openwhisk_short}} plug-in, run `ibmcloud fn` with no arguments.
 {: tip}

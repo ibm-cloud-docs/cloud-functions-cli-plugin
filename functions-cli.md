@@ -4,6 +4,10 @@ copyright:
   years: 2015, 2018
 lastupdated: "2018-09-13"
 
+keywords: functions cli, serverless, bluemix cli, install, functions plug-in
+
+subcollection: cloud-functions-cli-plugin
+
 ---
 
 {:shortdesc: .shortdesc}

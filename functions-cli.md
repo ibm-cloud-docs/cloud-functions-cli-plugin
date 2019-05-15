@@ -4,7 +4,7 @@ copyright:
   years: 2017, [{CURRENT_<em>YEAR</em>}]
 lastupdated: "2019-05-15"
 
-<em>KEY</em>words: managing actions, manage, activation, action logs, changing runtime, delete
+keywords: managing actions, manage, activation, action logs, changing runtime, delete
 
 subcollection: cloud-functions
 
@@ -28,7 +28,7 @@ subcollection: cloud-functions
 
 
 # CLI reference
-{: #cli_reference}
+{: #functions-cli}
 
 Run these commands to manage the entities that make up your functions.
 {: shortdec}

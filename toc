@@ -1,7 +1,9 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="cloud-functions" audience="compute" href="/docs/cloud-functions-cli-plugin/functions-cli.html" path="cloud-functions-cli-plugin"}
+{: .toc subcollection="cloud-functions-cli-plugin" audience="compute" href="/docs/cloud-functions-cli-plugin/cloud-functions-cli-plugin-functions-cli" path="cloud-functions-cli-plugin"}
 IBM Cloud Functions CLI reference
 
+    {: .navgroup id="reference"}
     functions-cli.md
+    {: .navgroup-end}

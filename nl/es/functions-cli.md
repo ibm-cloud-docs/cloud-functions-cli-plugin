@@ -2103,6 +2103,3 @@ ibmcloud fn trigger update <em>TRIGGER_NAME</em> [--annotation <em>ANNOTATION_KE
 ibmcloud fn trigger update mytrigger --param name Jim
 ```
 {: pre}
-
-
-

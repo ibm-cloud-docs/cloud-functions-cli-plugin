@@ -1,1 +1,1 @@
-# cloud-functions-cli-plugin
+# cloud-functions-cli-plugin documentation

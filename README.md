@@ -1,1 +1,1 @@
-# cloud-functions-cli-plugin documentation
+# IBM Cloud Functions CLI documentation

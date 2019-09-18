@@ -48,7 +48,12 @@ To see CLI help for the `action` command, run `ibmcloud fn action`.
 Create an action.
 
 ```
-ibmcloud fn action create ACTION_NAME APP_FILE [--annotation ANNOTATION_KEY ANNOTATION_VALUE] [--annotation-file FILE] [--copy] [--docker DOCKER_HUB_USERNAME/IMAGE_NAME] [--kind LANGUAGE] [--logsize LIMIT] [--main ENTRY_METHOD_NAME] [--native] [--param KEY VALUE] [--param-file FILE] [--sequence ACTION_NAME, ACTION_NAME] [--timeout LIMIT] [--web yes|true|raw|no|false] [--web-secure SECRET]
+ibmcloud fn action create ACTION_NAME APP_FILE 
+[--annotation ANNOTATION_KEY ANNOTATION_VALUE] [--annotation-file FILE] 
+[--copy] [--docker DOCKER_HUB_USERNAME/IMAGE_NAME] [--kind LANGUAGE] 
+[--logsize LIMIT] [--main ENTRY_METHOD_NAME] [--native] 
+[--param KEY VALUE] [--param-file FILE] [--sequence ACTION_NAME, ACTION_NAME] 
+[--timeout LIMIT] [--web yes|true|raw|no|false] [--web-secure SECRET]
 ```
 {: pre}
 
@@ -198,7 +203,8 @@ ibmcloud fn action delete ACTION_NAME
 Get metadata that describes a specific action.
 
 ```
-ibmcloud fn action get ACTION_NAME [--save] [--save-as FILENAME] [--summary] [--url]
+ibmcloud fn action get ACTION_NAME [--save] 
+[--save-as FILENAME] [--summary] [--url]
 ```
 {: pre}
 
@@ -266,7 +272,8 @@ ok: got action hello
 Run an action to test it.
 
 ```
-ibmcloud fn action invoke ACTION_NAME [--blocking] [--param KEY VALUE] [--param-file FILE] [--result]
+ibmcloud fn action invoke ACTION_NAME [--blocking] 
+[--param KEY VALUE] [--param-file FILE] [--result]
 ```
 {: pre}
 
@@ -305,7 +312,8 @@ ibmcloud fn action invoke hello --blocking
 List all of the actions that you created or a specific number of actions.
 
 ```
-ibmcloud fn action list ACTION_NAME [--limit NUMBER_OF_ACTIONS] [--name-sort] [--skip NUMBER_OF_ACTIONS]
+ibmcloud fn action list ACTION_NAME [--limit NUMBER_OF_ACTIONS] 
+[--name-sort] [--skip NUMBER_OF_ACTIONS]
 ```
 {: pre}
 
@@ -345,7 +353,11 @@ When you update parameters for a package, action, or trigger you must specify al
 {: important}
 
 ```
-ibmcloud fn action update ACTION_NAME APP_FILE [--annotation ANNOTATION_KEY ANNOTATION_VALUE] [--annotation-file FILE] [--copy] [--docker DOCKER_HUB_USERNAME/IMAGE_NAME] [--kind LANGUAGE] [--logsize LIMIT] [--main ENTRY_METHOD_NAME] [--native] [--param KEY VALUE] [--param-file FILE] [--sequence ACTION_NAME, ACTION_NAME] [--timeout LIMIT] [--web yes|true|raw|no|false] [--web-secure SECRET]
+ibmcloud fn action update ACTION_NAME APP_FILE [--annotation ANNOTATION_KEY ANNOTATION_VALUE] 
+[--annotation-file FILE] [--copy] [--docker DOCKER_HUB_USERNAME/IMAGE_NAME] 
+[--kind LANGUAGE] [--logsize LIMIT] [--main ENTRY_METHOD_NAME] 
+[--native] [--param KEY VALUE] [--param-file FILE] [--sequence ACTION_NAME, ACTION_NAME] 
+[--timeout LIMIT] [--web yes|true|raw|no|false] [--web-secure SECRET]
 ```
 {: pre}
 
@@ -507,7 +519,9 @@ ibmcloud fn activation get 8694a4501be6486a94a4501be6886a1e --summary
 List all of the activation IDs for all of the actions in a package.
 
 ```
-ibmcloud fn activation list [--full] [--limit NUMBER_OF_ACTIVATIONS] [--since UNIX_EPOCH_TIME] [--skip NUMBER_OF_ACTIVATIONS] [--upto UNIX_EPOCH_TIME]
+ibmcloud fn activation list [--full] [--limit NUMBER_OF_ACTIVATIONS] 
+[--since UNIX_EPOCH_TIME] [--skip NUMBER_OF_ACTIVATIONS] 
+[--upto UNIX_EPOCH_TIME]
 ```
 {: pre}
 
@@ -586,7 +600,9 @@ ibmcloud fn activation logs 8694a4501be6486a94a4501be6886a1e --summary
 View a streaming, live list of activations for an action or a namespace. You can press `CTRL+C` to exit the polling.
 
 ```
-ibmcloud fn activation poll [NAMESPACE] [ACTION_NAME] [--exit SECONDS] [--since-days DAYS] [-since-hours HOURS] [--since-minutes MINUTES] [--since-seconds SECONDS]
+ibmcloud fn activation poll [NAMESPACE] [ACTION_NAME] 
+[--exit SECONDS] [--since-days DAYS] [-since-hours HOURS] 
+[--since-minutes MINUTES] [--since-seconds SECONDS]
 ```
 {: pre}
 
@@ -668,7 +684,8 @@ To see CLI help for the `api` command, run `ibmcloud fn api`.
 Create an API.
 
 ```
-ibmcloud fn api create BASE_PATH API_PATH API_VERB ACTION_NAME] [--apiname API_NAME] [--config-file FILE] [--response-type TYPE]
+ibmcloud fn api create BASE_PATH API_PATH API_VERB ACTION_NAME] 
+[--apiname API_NAME] [--config-file FILE] [--response-type TYPE]
 ```
 {: pre}
 
@@ -806,7 +823,8 @@ ibmcloud fn api get BASE_PATH API_NAME [--format OUTPUT_TYPE] [--full]
 List all of the APIs that you created or a specific number of APIs. If no name or base path is specified, all of the APIs are listed.
 
 ```
-ibmcloud fn api list BASE_PATH API_NAME API_PATH API_VERB [--full] [--limit NUMBER_OF_APIS] [--name-sort] [--skip NUMBER_OF_APIS]
+ibmcloud fn api list BASE_PATH API_NAME API_PATH API_VERB [--full] 
+[--limit NUMBER_OF_APIS] [--name-sort] [--skip NUMBER_OF_APIS]
 ```
 {: pre}
 
@@ -862,9 +880,9 @@ To see CLI help for the `deploy` command, run `ibmcloud fn deploy`.
 Use a manifest file to deploy a collection of packages, actions, triggers, and rules.
 
 ```
-ibmcloud fn deploy [--apihost HOST] [--auth KEY] [--config FILE] \
-[--deployment FILE] [--manifest FILE] [--namespace NAMESPACE] \
-[--param KEY VALUE] [--param-file FILE] [--preview] \
+ibmcloud fn deploy [--apihost HOST] [--auth KEY] [--config FILE]
+[--deployment FILE] [--manifest FILE] [--namespace NAMESPACE]
+[--param KEY VALUE] [--param-file FILE] [--preview]
 [--project PATH] [--strict] [--verbose]
 ```
 {: pre}
@@ -930,7 +948,10 @@ To see CLI help for the `undeploy` command, run `ibmcloud fn undeploy`.
 Use a manifest file to undeploy a collection of packages, actions, triggers, and rules.
 
 ```
-ibmcloud fn undeploy [--apihost HOST] [--auth KEY] [--config FILE] [--deployment FILE] [--manifest FILE] [--namespace NAMESPACE] [--param KEY VALUE] [--param-file FILE] [--preview] [--project PATH] [--strict] [--verbose]
+ibmcloud fn undeploy [--apihost HOST] [--auth KEY] 
+[--config FILE] [--deployment FILE] [--manifest FILE] 
+[--namespace NAMESPACE] [--param KEY VALUE] [--param-file FILE] 
+[--preview] [--project PATH] [--strict] [--verbose]
 ```
 {: pre}
 
@@ -1088,7 +1109,8 @@ ibmcloud fn namespace delete NAMESPACE
 Get the entities for or the metadata information from a Cloud Foundry or IAM namespace.
 
 ```
-ibmcloud fn namespace list NAMESPACE [--auth KEY] [--name-sort] [--properties] 
+ibmcloud fn namespace list NAMESPACE [--auth KEY] 
+[--name-sort] [--properties] 
 ```
 {: pre}
 
@@ -1137,7 +1159,8 @@ ibmcloud fn namespace list NAMESPACE [--auth KEY] [--name-sort] [--properties]
 List the available Cloud Foundry and IAM namespaces.
 
 ```
-ibmcloud fn namespace list [--auth KEY] [--cf] [--iam] [--limit NUMBER_OF_NAMESPACES] [--name-sort] [--skip NUMBER_OF_NAMESPACES] 
+ibmcloud fn namespace list [--auth KEY] [--cf] [--iam] 
+[--limit NUMBER_OF_NAMESPACES] [--name-sort] [--skip NUMBER_OF_NAMESPACES] 
 ```
 {: pre}
 
@@ -1224,7 +1247,8 @@ To see CLI help for the `package` command, run `ibmcloud fn package`.
 Bind parameters to a package. All of the actions within the package inherit those parameters unless otherwise specified.
 
 ```
-ibmcloud fn package bind PACKAGE_NAME [--annotation ANNOTATION_KEY ANNOTATION_VALUE] [--annotation-file FILE] [--param KEY VALUE] [--param-file FILE]
+ibmcloud fn package bind PACKAGE_NAME [--annotation ANNOTATION_KEY ANNOTATION_VALUE] 
+[--annotation-file FILE] [--param KEY VALUE] [--param-file FILE]
 ```
 {: pre}
 
@@ -1264,7 +1288,8 @@ ibmcloud fn package bind PACKAGE_NAME [--annotation ANNOTATION_KEY ANNOTATION_VA
 Create a package designed to contain one or more actions. To add an action in the package, include the package name with the action name when you create or update the action.
 
 ```
-ibmcloud fn package create PACKAGE_NAME [--annotation ANNOTATION_KEY ANNOTATION_VALUE] [--annotation-file FILE] [--param KEY VALUE] [--param-file FILE]
+ibmcloud fn package create PACKAGE_NAME [--annotation ANNOTATION_KEY ANNOTATION_VALUE] 
+[--annotation-file FILE] [--param KEY VALUE] [--param-file FILE]
 ```
 {: pre}
 
@@ -1368,7 +1393,8 @@ ibmcloud fn package get hello
 List all of the packages that you created or a specific number of packages.
 
 ```
-ibmcloud fn package list [NAMESPACE] [--limit NUMBER_OF_PACKAGES] [--name-sort] [--skip NUMBER_OF_PACKAGES]
+ibmcloud fn package list [NAMESPACE] [--limit NUMBER_OF_PACKAGES] 
+[--name-sort] [--skip NUMBER_OF_PACKAGES]
 ```
 {: pre}
 
@@ -1439,7 +1465,8 @@ When you update parameters for a package, action, or trigger you must specify al
 {: important}
 
 ```
-ibmcloud fn package update PACKAGE_NAME [--annotation ANNOTATION_KEY ANNOTATION_VALUE] [--annotation-file FILE] [--param KEY VALUE] [--param-file FILE]
+ibmcloud fn package update PACKAGE_NAME [--annotation ANNOTATION_KEY ANNOTATION_VALUE] 
+[--annotation-file FILE] [--param KEY VALUE] [--param-file FILE]
 ```
 {: pre}
 
@@ -1499,7 +1526,8 @@ To see CLI help for the `property` command, run `ibmcloud fn property`.
 View the metadata details for a property from the `wsk` CLI.
 
 ```
-ibmcloud fn property get [--apihost HOST] [--apiversion VERSION] [--auth KEY] [--cert STRING] [--key STRING] [--namespace NAMESPACE]
+ibmcloud fn property get [--apihost HOST] [--apiversion VERSION] 
+[--auth KEY] [--cert STRING] [--key STRING] [--namespace NAMESPACE]
 ```
 {: pre}
 
@@ -1554,7 +1582,8 @@ ibmcloud fn property get [--apihost HOST] [--apiversion VERSION] [--auth KEY] [-
 Set a property. At least one flag is required. Once a property is set, it is retained on your workstation at `<home_dir>/.bluemix/plugins/cloud-functions/config.json`. To remove a property, run [`ibmcloud fn property unset --<property>`](#cli_prop_set).
 
 ```
-ibmcloud fn property set [--apihost HOST] [--apiversion VERSION] [--auth KEY] [--cert STRING] [--key STRING] [--namespace NAMESPACE]
+ibmcloud fn property set [--apihost HOST] [--apiversion VERSION] 
+[--auth KEY] [--cert STRING] [--key STRING] [--namespace NAMESPACE]
 ```
 {: pre}
 
@@ -1605,7 +1634,8 @@ If properties are retained after running the `property unset` command you can de
 {: note}
 
 ```
-ibmcloud fn property unset [--apihost HOST] [--apiversion VERSION] [--auth KEY] [--cert STRING] [--key STRING] [--namespace NAMESPACE]
+ibmcloud fn property unset [--apihost HOST] [--apiversion VERSION] 
+[--auth KEY] [--cert STRING] [--key STRING] [--namespace NAMESPACE]
 ```
 {: pre}
 
@@ -1781,7 +1811,8 @@ ibmcloud fn rule get myrule
 List all of the rules that you created or a specific number of rules.
 
 ```
-ibmcloud fn rule list RULE_NAME [--limit NUMBER_OF_RULES] [--name-sort] [--skip NUMBER_OF_RULES]
+ibmcloud fn rule list RULE_NAME [--limit NUMBER_OF_RULES] 
+[--name-sort] [--skip NUMBER_OF_RULES]
 ```
 {: pre}
 
@@ -1906,7 +1937,8 @@ If you receive the error `Unable to refresh user access token: CloudFoundry API 
 Bind service credentials to an action or package.
 
 ```
-ibmcloud fn service bind SERVICE PACKAGE_or_ACTION_NAME [--instance SERVICE_INSTANCE] [--keyname SERVICE_KEY]
+ibmcloud fn service bind SERVICE PACKAGE_or_ACTION_NAME 
+[--instance SERVICE_INSTANCE] [--keyname SERVICE_KEY]
 ```
 {: pre}
 
@@ -1983,7 +2015,9 @@ To see CLI help for the `trigger` command, run `ibmcloud fn trigger`.
 Create a trigger.
 
 ```
-ibmcloud fn trigger create TRIGGER_NAME [--annotation ANNOTATION_KEY ANNOTATION_VALUE] [--annotation-file FILE] [--feed ACTION_NAME] [--param KEY VALUE] [--param-file FILE]
+ibmcloud fn trigger create TRIGGER_NAME [--annotation ANNOTATION_KEY ANNOTATION_VALUE] 
+[--annotation-file FILE] [--feed ACTION_NAME] 
+[--param KEY VALUE] [--param-file FILE]
 ```
 {: pre}
 
@@ -2110,7 +2144,8 @@ ibmcloud fn trigger get mytrigger
 List all of the triggers that you created or a specific number of triggers.
 
 ```
-ibmcloud fn trigger list TRIGGER_NAME [--limit NUMBER_OF_TRIGGERS] [--name-sort] [--skip NUMBER_OF_TRIGGERS]
+ibmcloud fn trigger list TRIGGER_NAME [--limit NUMBER_OF_TRIGGERS] 
+[--name-sort] [--skip NUMBER_OF_TRIGGERS]
 ```
 {: pre}
 
@@ -2150,7 +2185,8 @@ When you update parameters for a package, action, or trigger you must specify al
 {: important}
 
 ```
-ibmcloud fn trigger update TRIGGER_NAME [--annotation ANNOTATION_KEY ANNOTATION_VALUE] [--annotation-file FILE] [--param KEY VALUE] [--param-file FILE]
+ibmcloud fn trigger update TRIGGER_NAME [--annotation ANNOTATION_KEY ANNOTATION_VALUE] 
+[--annotation-file FILE] [--param KEY VALUE] [--param-file FILE]
 ```
 {: pre}
 

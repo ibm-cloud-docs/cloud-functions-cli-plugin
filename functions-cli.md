@@ -1022,7 +1022,7 @@ ibmcloud fn list [--name-sort]
 ## Namespace commands
 {: #cli_namespace}
 
-To learn how to target your {{site.data.keyword.openwhisk_short}} namespace, see [Targeting namespaces](/docs/openwhisk?topic=cloud-functions-namespaces#namespace_targeting).
+To learn how to target your {{site.data.keyword.openwhisk_short}} namespace, see [Targeting namespaces](/docs/openwhisk?topic=cloud-functions-namespaces#targeting-namespaces).
 {: note}
 
 To see CLI help for the `namespace` command, run `ibmcloud fn namespace`.

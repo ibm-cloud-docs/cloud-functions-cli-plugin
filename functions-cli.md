@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-07-19"
+lastupdated: "2019-09-18"
 
 keywords: managing actions, manage, activation, action logs, changing runtime, delete
 
@@ -1524,7 +1524,7 @@ ibmcloud fn property get [--apihost HOST] [--apiversion VERSION] [--auth KEY] [-
 ### `ibmcloud fn property set`
 {: #cli_prop_set}
 
-Set a property. At least one flag is required. Once a property is set, it is retained on your workstation at `<home_dir>/.bluemix/plugins/cloud-functions/config.json`. To remove a property, run [`ibmcloud fn property unset --<property>`](#cli_prop_set). 
+Set a property. At least one flag is required. Once a property is set, it is retained on your workstation at `<home_dir>/.bluemix/plugins/cloud-functions/config.json`. To remove a property, run [`ibmcloud fn property unset --<property>`](#cli_prop_set).
 
 ```
 ibmcloud fn property set [--apihost HOST] [--apiversion VERSION] [--auth KEY] [--cert STRING] [--key STRING] [--namespace NAMESPACE]
@@ -1573,6 +1573,9 @@ ibmcloud fn property set [--apihost HOST] [--apiversion VERSION] [--auth KEY] [-
 {: #cli_prop_unset}
 
 Unset a property for the `wsk` CLI. At least one flag is required.
+
+If properties are retained after running the `property unset` command you can delete the `config.json` file located at `<home_dir>/.bluemix/plugins/cloud-functions/config.json` to remove all properties.
+{: note}
 
 ```
 ibmcloud fn property unset [--apihost HOST] [--apiversion VERSION] [--auth KEY] [--cert STRING] [--key STRING] [--namespace NAMESPACE]

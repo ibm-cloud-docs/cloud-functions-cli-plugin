@@ -28,7 +28,6 @@ subcollection: cloud-functions-cli-plugin
 
 
 
-
 # {{site.data.keyword.openwhisk_short}} CLI
 {: #functions-cli}
 
@@ -40,7 +39,8 @@ Run these commands to manage the entities that make up your functions.
 ## Action commands
 {: #cli_action}
 
-
+To see CLI help for the `action` command, run `ibmcloud fn action`.
+{: tip}
 
 ### `ibmcloud fn action create`
 {: #cli_action_create}
@@ -457,9 +457,12 @@ ibmcloud fn action update hello folder/hello_world.js
 
 
 <br /><br />
+
 ## Activation commands
 {: #cli_activation}
 
+To see CLI help for the `activation` command, run `ibmcloud fn activation`.
+{: tip}
 
 ### `ibmcloud fn activation get`
 {: #cli_activation_get}
@@ -656,6 +659,8 @@ ibmcloud fn activation result 8694a4501be6486a94a4501be6886a1e
 ## API commands
 {: #cli_api}
 
+To see CLI help for the `api` command, run `ibmcloud fn api`.
+{: tip}
 
 ### `ibmcloud fn api create`
 {: #cli_api_create}
@@ -844,17 +849,23 @@ ibmcloud fn api list BASE_PATH API_NAME API_PATH API_VERB [--full] [--limit NUMB
 
 
 <br /><br />
+
 ## Deployment commands
 {: #cli_deploy_cmds}
-
 
 ### `ibmcloud fn deploy`
 {: #cli_deploy}
 
+To see CLI help for the `deploy` command, run `ibmcloud fn deploy`.
+{: tip}
+
 Use a manifest file to deploy a collection of packages, actions, triggers, and rules.
 
 ```
-ibmcloud fn deploy [--apihost HOST] [--auth KEY] [--config FILE] [--deployment FILE] [--manifest FILE] [--namespace NAMESPACE] [--param KEY VALUE] [--param-file FILE] [--preview] [--project PATH] [--strict] [--verbose]
+ibmcloud fn deploy [--apihost HOST] [--auth KEY] [--config FILE] \
+[--deployment FILE] [--manifest FILE] [--namespace NAMESPACE] \
+[--param KEY VALUE] [--param-file FILE] [--preview] \
+[--project PATH] [--strict] [--verbose]
 ```
 {: pre}
 
@@ -912,6 +923,9 @@ ibmcloud fn deploy [--apihost HOST] [--auth KEY] [--config FILE] [--deployment F
 
 ### `ibmcloud fn undeploy`
 {: #cli_undeploy}
+
+To see CLI help for the `undeploy` command, run `ibmcloud fn undeploy`.
+{: tip}
 
 Use a manifest file to undeploy a collection of packages, actions, triggers, and rules.
 
@@ -1004,9 +1018,15 @@ ibmcloud fn list [--name-sort]
 
 
 <br /><br />
+
 ## Namespace commands
 {: #cli_namespace}
 
+To learn how to target a namespace, see [Targeting namespaces](/docs/openwhisk?topic=cloud-functions-namespaces#namespace_targeting).
+{: note}
+
+To see CLI help for the `namespace` command, run `ibmcloud fn namespace`.
+{: tip}
 
 ### `ibmcloud fn namespace create`
 {: #cli_namespace_create}
@@ -1191,9 +1211,12 @@ ibmcloud fn namespace update NAMESPACE [NEW_NAMESPACE_NAME] [--description DESCR
 
 
 <br /><br />
+
 ## Package commands
 {: #cli_pkg}
 
+To see CLI help for the `package` command, run `ibmcloud fn package`.
+{: tip}
 
 ### `ibmcloud fn package bind`
 {: #cli_pkg_bind}
@@ -1461,10 +1484,14 @@ ibmcloud fn package update PACKAGE_NAME [--annotation ANNOTATION_KEY ANNOTATION_
 
 
 <br /><br />
+
 ## Property commands
 {: #cli_prop}
 
 Set global properties for your CLI environment or view properties about the `wsk` CLI, which runs as part of the `ibmcloud fn` CLI.
+
+To see CLI help for the `property` command, run `ibmcloud fn property`.
+{: tip}
 
 ### `ibmcloud fn property get`
 {: #cli_prop_get}
@@ -1615,8 +1642,12 @@ ibmcloud fn property unset [--apihost HOST] [--apiversion VERSION] [--auth KEY] 
 
 
 <br /><br />
+
 ## Rule commands
 {: #cli_rule}
+
+To see CLI help for the `rule` command, run `ibmcloud fn rule`.
+{: tip}
 
 
 ### `ibmcloud fn rule create`
@@ -1825,6 +1856,7 @@ ibmcloud fn rule update RULE_NAME TRIGGER_NAME ACTION_NAME
 ## SDK command
 {: #cli_sdk}
 
+To see CLI help for the `sdk` command, run `ibmcloud fn sdk`.
 
 ### `ibmcloud fn sdk install`
 {: #cli_sdk_install}
@@ -1862,6 +1894,11 @@ ibmcloud fn sdk install COMPONENT [--limit NUMBER_OF_TRIGGERS]
 ## Service commands
 {: #cli_service}
 
+To see CLI help for the `service` command, run `ibmcloud fn service`.
+{: tip}
+
+If you receive the error `Unable to refresh user access token: CloudFoundry API endpoint is not set` when running the `service` command, run `ibmcloud target --cf`.
+{}: note}
 
 ### `ibmcloud fn service bind`
 {: #cli_service_bind}
@@ -1936,6 +1973,8 @@ ibmcloud fn service unbind SERVICE PACKAGE_or_ACTION_NAME
 
 ## Trigger commands
 {: #cli_trigger}
+
+To see CLI help for the `trigger` command, run `ibmcloud fn trigger`.
 
 
 ### `ibmcloud fn trigger create`

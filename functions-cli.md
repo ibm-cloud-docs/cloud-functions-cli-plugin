@@ -2140,4 +2140,50 @@ ibmcloud fn trigger update mytrigger --param name Jim
 
 
 
+### `ibmcloud fn trigger update`
+{: #cli_trigger_update}
+
+Update a trigger.
+
+When you update parameters for a package, action, or trigger you must specify all previously created parameters. Otherwise, the previously created parameters are removed. For packages, any services that were bound to the package are also removed, so after you update other parameters you must [bind services](/docs/openwhisk?topic=cloud-functions-services) to your package again.
+{: important}
+
+```
+ibmcloud fn trigger update TRIGGER_NAME [--annotation ANNOTATION_KEY ANNOTATION_VALUE] [--annotation-file FILE] [--param KEY VALUE] [--param-file FILE]
+```
+{: pre}
+
+<br />**Command options**
+
+   <dl>
+   <dt>`TRIGGER_NAME`</dt>
+   <dd>The name of the trigger. This value is required. </dd>
+
+   <dt>`--annotation` `ANNOTATION_KEY` `ANNOTATION_VALUE`, `-a` `ANNOTATION_KEY` `ANNOTATION_VALUE`</dt>
+   <dd>Annotations are specified in a `KEY` `VALUE` format. To include more than one annotation, specify this option for each annotation. This flag is optional.</dd>
+
+   <dt>`--annotation-file` `FILE`, `-A` `FILE`</dt>
+   <dd>A JSON file that contains annotation in a `KEY` `VALUE` format. This flag is optional.</dd>
+
+   <dt>`--param` `KEY` `VALUE`, `-p` `KEY` `VALUE`</dt>
+   <dd>Parameter values in the `KEY` `VALUE` format. This flag is optional.</dd>
+
+   <dt>`--param-file` `FILE`, `-P` `FILE`</dt>
+   <dd>A JSON file that contains parameter `KEYS` and `VALUES`. This flag is optional.</dd>
+   </dl>
+
+<br />**Example**
+```
+ibmcloud fn trigger update mytrigger --param name Jim
+```
+{: pre}
+
+
+
+
+
+
+
+
+
 

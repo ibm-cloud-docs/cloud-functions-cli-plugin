@@ -1807,13 +1807,13 @@ ibmcloud fn service bind SERVICE PACKAGE_or_ACTION_NAME [--instance SERVICE_INST
 <dt>`SERVICE`</dt>
 <dd>The name of the service.</dd>
 
-<dt>`PACKAGE_or_``ACTION_NAME`</dt>
+<dt>`PACKAGE_or_ACTION_NAME`</dt>
 <dd>The name of the package or action to bind the credentials to.</dd>
 
 <dt>`--instance SERVICE_INSTANCE`</dt>
 <dd>The service instance name.</dd>
 
-<dt>`--keyname SERVICE_``KEY`</dt>
+<dt>`--keyname SERVICE_KEY`</dt>
 <dd>The name of the service `KEY` credentials to bind.</dd>
 </dl>
 

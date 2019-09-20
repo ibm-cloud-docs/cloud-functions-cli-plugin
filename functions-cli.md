@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-07-16"
+lastupdated: "2019-07-15"
 
 keywords: managing actions, manage, activation, action logs, changing runtime, delete
 

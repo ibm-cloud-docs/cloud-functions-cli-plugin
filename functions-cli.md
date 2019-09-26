@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-09-19"
+lastupdated: "2019-09-26"
 
 keywords: managing actions, manage, activation, action logs, changing runtime, delete
 
@@ -1788,7 +1788,7 @@ To see CLI help for the `service` command, run `ibmcloud fn service`.
 {: tip}
 
 If you receive the error `Unable to refresh user access token: CloudFoundry API endpoint is not set` when running the `service` command, run `ibmcloud target --cf`.
-{}: note}
+{: note}
 
 ### `ibmcloud fn service bind`
 {: #cli_service_bind}

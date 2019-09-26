@@ -1039,7 +1039,7 @@ Get the entities for or the metadata information from a Cloud Foundry or IAM nam
 {: shortdec}
 
 ```
-ibmcloud fn namespace list NAMESPACE [--auth KEY] [--name-sort] [--properties] 
+ibmcloud fn namespace get NAMESPACE [--auth KEY] [--name-sort] [--properties] 
 ```
 {: pre}
 

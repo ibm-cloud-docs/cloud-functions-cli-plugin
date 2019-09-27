@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-09-26"
+lastupdated: "2019-09-27"
 
 keywords: managing actions, manage, activation, action logs, changing runtime, delete
 
@@ -448,7 +448,7 @@ ibmcloud fn action update hello folder/hello_world.js
 ## Activation commands
 {: #cli_activation}
 
-Get metadata, list IDs, find logs, and list resutls for specific activations.
+Get metadata, list IDs, find logs, and list results for specific activations.
 {: shortdec} 
 
 To see CLI help for the `activation` command, run `ibmcloud fn activation`.

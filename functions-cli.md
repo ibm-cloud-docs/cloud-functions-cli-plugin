@@ -2,8 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-09-27"
-
+lastupdated: "2019-10-18"
 
 keywords: managing actions, manage, activation, action logs, changing runtime, delete
 
@@ -27,13 +26,11 @@ subcollection: cloud-functions-cli-plugin
 {:download: .download}
 {:gif: data-image-type='gif'}
 
-
 # {{site.data.keyword.openwhisk_short}} CLI
 {: #functions-cli}
 
 Run these commands to manage the entities that make up your functions.
 {: shortdec}
-
 
 ## Action commands
 {: #cli_action}
@@ -256,8 +253,6 @@ ok: got action hello
 {: screen}
 
 
-
-<br />
 
 ### `ibmcloud fn action invoke`
 {: #cli_action_invoke}
@@ -2050,4 +2045,3 @@ ibmcloud fn trigger update TRIGGER_NAME [--annotation ANNOTATION_KEY ANNOTATION_
 ibmcloud fn trigger update mytrigger --param name Jim
 ```
 {: pre}
-

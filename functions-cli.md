@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2019
-lastupdated: "2019-10-18"
+  years: 2017, 2020
+lastupdated: "2020-03-06"
 
 keywords: managing actions, manage, activation, action logs, changing runtime, delete
 
@@ -1888,12 +1888,20 @@ ibmcloud fn trigger create TRIGGER_NAME [--annotation ANNOTATION_KEY ANNOTATION_
 
 <dt>`--param-file` `FILE`, `-P` `FILE`</dt>
 <dd>A JSON file that contains parameter `KEYS` and `VALUES`. This flag is optional.</dd>
+
+<dt>`--trigger-param` `KEY` `VALUE`, `-p` `KEY` `VALUE`</dt>
+<dd>Trigger parameter values in the `KEY` `VALUE` format. This flag is optional.</dd>
+
+<dt>`--feed-param` `KEY` `VALUE`, `-p` `KEY` `VALUE`</dt>
+<dd>Feed parameter values in the `KEY` `VALUE` format. This flag is optional.</dd>
 </dl>
 
 **Example**
 
 ```
-ibmcloud fn trigger create mytrigger --param name Bob
+ibmcloud fn trigger create mytrigger --param name Bob 
+ibmcloud fn trigger create mytrigger --trigger-param name Bob
+
 ```
 {: pre}
 
@@ -2037,11 +2045,35 @@ ibmcloud fn trigger update TRIGGER_NAME [--annotation ANNOTATION_KEY ANNOTATION_
 
 <dt>`--param-file` `FILE`, `-P` `FILE`</dt>
 <dd>A JSON file that contains parameter `KEYS` and `VALUES`. This flag is optional.</dd>
+
+<dt>`--trigger-param` `KEY` `VALUE`, `-p` `KEY` `VALUE`</dt>
+<dd>Trigger parameter values in the `KEY` `VALUE` format. This flag is optional.</dd>
+
+<dt>`--feed-param` `KEY` `VALUE`, `-p` `KEY` `VALUE`</dt>
+<dd>Feed parameter values in the `KEY` `VALUE` format. This flag is optional.</dd>
+
 </dl>
 
 **Example**
 
 ```
 ibmcloud fn trigger update mytrigger --param name Jim
+ibmcloud fn trigger update mytrigger --trigger-param name Jim
+ibmcloud fn trigger update mytrigger --feed-param cron "0,1,2,3,4"
 ```
 {: pre}
+
+Starting from functions plugin CLI version 1.0.38, we’ve introduced two new flags for trigger command. The two new flags are —trigger-param and —feed-param. These two new flags are introduced as an extension of the current way of creating and updating trigger to make the trigger create and update command more flexible. To understand how these two new flags work, we need to understand how the old flag —param is used. As you probably know, we can create and update a simple trigger with a parameter on it with the following command: 
+
+ibmcloud fn trigger create triggerHelloWorld —param msg “Hello World!” 
+
+
+The above command creates a trigger called triggerHelloWorld with a parameter of KEY msg and VALUE of “Hello World!”. This is very simple and straightforward. However, it becomes a little complicated when user creates a trigger that contains a feed, especially when user wants to put parameters on both the trigger and the trigger feed. For example, if user wants to create a trigger with alarm feed, user has only one way of doing this: 
+
+Ibmcloud fn trigger create triggerCron —feed /whisk.system/alarms/alarm —param cron “0,1,2,3,4,5”
+
+In this case, the KEY and VALUE pair following —param would be consumed by feed and treated as feed parameters. In version 1.0.38, we introduced aforementioned two new flags to differentiate trigger parameters and feed parameters. The following command: 
+
+Ibmcloud fn trigger create triggerCron —feed /whisk.system/alarms/alarm —feed-param cron “0,1,2,3,4,5” —trigger-param msg “Hello World!” will create a trigger called triggerCron with cron feed parameters of “0,1,2,3,4,5” and trigger parameter of KEY msg and VALUE of “Hello World!” 
+
+We did not deprecate the old —param flag so that users can continue to use them, we simply gave users the new option to separate trigger and feed parameters by introducing these two new flags. IMPORTANT NOTE: please do not mix use of —param or —param-file with either —trigger-param or —feed-param. They are considered two different ways of setting trigger flags and should not be used together. 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-08-25"
+lastupdated: "2020-09-02"
 
 keywords: managing actions, manage, activation, action logs, changing runtime, delete
 
@@ -82,11 +82,11 @@ ibmcloud fn action create ACTION_NAME APP_FILE [--annotation ANNOTATION_KEY ANNO
   </tr>
   <tr>
     <td>Node.js</td>
-    <td> <code>nodejs:10</code> (default), <code>nodejs:8</code></td>
+    <td><code>nodejs:10</code> (default)</td>
   </tr>
   <tr>
     <td>Python</td>
-    <td><code>python:3.7</code>, <code>python:3.6</code>, <code>python:2</code> (default)</td>
+    <td><code>python:3.7</code> (default), <code>python:3.6</code></td>
   </tr>
   <tr>
     <td>Swift</td>
@@ -117,6 +117,7 @@ ibmcloud fn action create ACTION_NAME APP_FILE [--annotation ANNOTATION_KEY ANNO
   </tr>
 </table>
 {: caption="Table 1. Supported runtimes" caption-side="top"}
+
        </dd>
 
 <dt>`--logsize` `LIMIT`, `-l` `LIMIT`</dt>
@@ -367,11 +368,11 @@ ibmcloud fn action update ACTION_NAME APP_FILE [--annotation ANNOTATION_KEY ANNO
   </tr>
   <tr>
     <td>Node.js</td>
-    <td> <code>nodejs:10</code> (default), <code>nodejs:8</code></td>
+    <td><code>nodejs:10</code> (default)</td>
   </tr>
   <tr>
     <td>Python</td>
-    <td><code>python:3.7</code>, <code>python:3.6</code>, <code>python:2</code> (default)</td>
+    <td><code>python:3.7</code> (default), <code>python:3.6</code></td>
   </tr>
   <tr>
     <td>Swift</td>
@@ -402,6 +403,7 @@ ibmcloud fn action update ACTION_NAME APP_FILE [--annotation ANNOTATION_KEY ANNO
   </tr>
 </table>
 {: caption="Table 1. Supported runtimes" caption-side="top"}
+
       </dd>
 
 <dt>`--logsize` `LIMIT`, `-l` `LIMIT`</dt>

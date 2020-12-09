@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-10-29"
+lastupdated: "2020-12-09"
 
 keywords: managing actions, manage, activation, action logs, changing runtime, delete
 
@@ -1932,30 +1932,30 @@ ibmcloud fn trigger create mytrigger --trigger-param name Bob
 ```
 {: pre}
 
-Starting in functions plug-in CLI version 1.0.38, two new options are available for the trigger command: `—trigger-param` and `—feed-param`. These options are an extension to creating and updating a trigger, making the `trigger create` and `update` commands more flexible.
+Starting in functions plug-in CLI version 1.0.38, two new options are available for the trigger command: `--trigger-param` and `--feed-param`. These options are an extension to creating and updating a trigger, making the `trigger create` and `update` commands more flexible.
 
 Previously, you created and updated a trigger with a parameter on it with the following command: 
 
 ```
-ibmcloud fn trigger create triggerHelloWorld —param msg “Hello World!” 
+ibmcloud fn trigger create triggerHelloWorld --param msg “Hello World!” 
 ```
 {: pre}
 
 This command creates a trigger called `triggerHelloWorld` with a parameter of KEY `msg` and VALUE of `Hello World!`. This is very simple and straightforward. However, it becomes a little complicated when you create a trigger that contains a feed, especially when you want to add parameters on both the trigger and the trigger feed. For example, if you want to create a trigger with alarm feed, then you must run a command similar to the following example:
 
 ```
-ibmcloud fn trigger create triggerCron —feed /whisk.system/alarms/alarm —param cron “0,1,2,3,4,5”
+ibmcloud fn trigger create triggerCron --feed /whisk.system/alarms/alarm --param cron “0,1,2,3,4,5”
 ```
 {: pre}
 
-In this case, the KEY and VALUE pair that follows `—param` are consumed by feed and are treated as feed parameters. By using the new options, you can differentiate between trigger parameters and feed parameters. The following command creates a trigger called `triggerCron` with cron feed parameters of `0,1,2,3,4,5` and a trigger parameter of KEY `msg` and VALUE of `Hello World!`.
+In this case, the KEY and VALUE pair that follows `--param` are consumed by feed and are treated as feed parameters. By using the new options, you can differentiate between trigger parameters and feed parameters. The following command creates a trigger called `triggerCron` with cron feed parameters of `0,1,2,3,4,5` and a trigger parameter of KEY `msg` and VALUE of `Hello World!`.
 
 ```
-ibmcloud fn  trigger create triggerCron —feed /whisk.system/alarms/alarm —feed-param cron “0,1,2,3,4,5” —trigger-param msg “Hello World!”
+ibmcloud fn  trigger create triggerCron --feed /whisk.system/alarms/alarm --feed-param cron “0,1,2,3,4,5” --trigger-param msg “Hello World!”
 ```
 {: pre}
 
-The original `—param` option is not deprecated so you can continue to use it as you have previously. You simply now have the ability to separate your trigger and feed parameters by using the new options. However, please do not mix `—param` or `—param-file` options with either `—trigger-param` or `—feed-param` options. These options are considered two different ways of setting trigger parameters and must not be used together. 
+The original `--param` option is not deprecated so you can continue to use it as you have previously. You simply now have the ability to separate your trigger and feed parameters by using the new options. However, please do not mix `--param` or `--param-file` options with either `--trigger-param` or `--feed-param` options. These options are considered two different ways of setting trigger parameters and must not be used together. 
 {: note}
 
 ### `ibmcloud fn trigger delete`

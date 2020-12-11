@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-12-09"
+lastupdated: "2020-12-11"
 
 keywords: managing actions, manage, activation, action logs, changing runtime, delete
 
@@ -232,7 +232,7 @@ ibmcloud fn action get hello
 ```
 ok: got action hello
 {
-    "namespace": "user@email.com",
+    "namespace": "<namespace_ID>",
     "name": "hello",
     "version": "0.0.1",
     "exec": {
@@ -578,10 +578,10 @@ ibmcloud fn activation poll [NAMESPACE] [ACTION_NAME] [--exit SECONDS] [--since-
 **Command options**
 <dl>
 <dt>/`NAMESPACE`</dt>
-<dd>A namespace, beginning with /. Poll activations for a namespace, an action, or a space. This value is optional. If a namespace or action is not specified, the space is polled.</dd>
+<dd>A namespace name or ID. Poll activations for a namespace, an action, or a space. This value is optional. If a namespace or action is not specified, the space is polled.</dd>
 
 <dt>`ACTION_NAME`</dt>
-<dd>Poll activations for a namespace, an action, or a space. This value is optional. If a namespace or action is not specified, the space is polled.</dd>
+<dd>An action name. Poll activations for a namespace, an action, or a space. This value is optional. If a namespace or action is not specified, the space is polled.</dd>
 
 <dt>`--exit` `SECONDS`, `-e` `SECONDS`</dt>
 <dd>Poll activations for a specified number of seconds and then exit. This flag is optional.</dd>
@@ -1331,8 +1331,8 @@ ibmcloud fn package list [NAMESPACE] [--limit NUMBER_OF_PACKAGES] [--name-sort] 
 
 **Command options**
 <dl>
-<dt>`NAMESPACE`</dt>
-<dd>List the packages in a specific namespace. This value is optional. If not specified, all packages are listed.</dd>
+<dt>`/NAMESPACE`</dt>
+<dd>List the packages in a specific namespace ID. This value must begin with a `/`. This value is optional. If not specified, all packages are listed.</dd>
 
 <dt>`--limit NUMBER_OF_PACKAGES`, `-l NUMBER_OF_PACKAGES`</dt>
 <dd>List a specified number of packages. The default is 30 packages.</dd>
@@ -1368,8 +1368,8 @@ ibmcloud fn package refresh /NAMESPACE
 **Command options**
 <dl>
 
-<dt>/`NAMESPACE`</dt>
-<dd>A namespace, beginning with /. This flag is required. Run `ibmcloud fn namespace list` to get a list of namespaces to choose from.</dd>
+<dt>`/NAMESPACE`</dt>
+<dd>A namespace ID, beginning with /. This flag is required. Run `ibmcloud fn namespace list` to get a list of namespaces to choose from.</dd>
 </dl>
 
 **Example**
@@ -1479,7 +1479,7 @@ ibmcloud fn property get [--apihost HOST] [--apiversion VERSION] [--auth KEY] [-
 <dd>The `wsk` client `KEY`. This flag is optional.</dd>
 
 <dt>`--namespace` `NAMESPACE`</dt>
-<dd>An IAM namespace. This flag cannot be set for Cloud Foundry namespaces. This flag is optional.</dd>
+<dd>An IAM namespace name or ID. This flag cannot be set for Cloud Foundry namespaces. This flag is optional.</dd>
 </dl>
 
 **Example**
@@ -1513,7 +1513,7 @@ ibmcloud fn property set [--auth KEY] [--cert STRING] [--key STRING] [--namespac
 <dd>The `wsk` client `KEY`. This flag is optional.</dd>
 
 <dt>`--namespace` `NAMESPACE`</dt>
-<dd>An IAM namespace. This flag cannot be set for Cloud Foundry namespaces. This flag is optional.</dd>
+<dd>An IAM namespace name or ID. This flag cannot be set for Cloud Foundry namespaces. This flag is optional.</dd>
 </dl>
 
 **Example**
@@ -1562,7 +1562,7 @@ ibmcloud fn property unset [--apihost HOST] [--apiversion VERSION] [--auth KEY] 
 <dd>The `wsk` client `KEY`. This flag is optional.</dd>
 
 <dt>`--namespace` `NAMESPACE`</dt>
-<dd>An IAM namespace. This flag cannot be set for Cloud Foundry namespaces. This flag is optional.</dd>
+<dd>An IAM namespace name or ID. This flag cannot be set for Cloud Foundry namespaces. This flag is optional.</dd>
 </dl>
 
 **Example**

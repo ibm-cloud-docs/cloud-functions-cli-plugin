@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-04-30"
+lastupdated: "2021-05-01"
 
 keywords: managing actions, manage, activation, action logs, changing runtime, delete, namespace, cli, rule, trigger, deployment, list, package, property, sdk, service
 
@@ -511,7 +511,7 @@ ibmcloud fn activation list [--full] [--limit NUMBER_OF_ACTIVATIONS] [--since UN
 <dt>`--since` `UNIX_EPOCH_TIME`</dt>
 <dd>List activations that were created since the date specified. Duration is measured in milliseconds since 01 January 1970. Example: `1560371263` is 12 June 2019 08:27:43 UTC.</dd>
 
-<dt>`--skip` `NUMBER_OF_ACTIVATIONS`, -s `NUMBER_OF_ACTIVATIONS`</dt>
+<dt>`--skip` `NUMBER_OF_ACTIVATIONS`, `-s NUMBER_OF_ACTIVATIONS`</dt>
 <dd>Exclude a specified number of the most recent activations from the result.</dd>
 
 <dt>`--upto` `UNIX_EPOCH_TIME`</dt>

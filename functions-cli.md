@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2021
-lastupdated: "2021-06-21"
+lastupdated: "2021-07-01"
 
 keywords: managing actions, manage, activation, action logs, changing runtime, delete, namespace, cli, rule, trigger, deployment, list, package, property, sdk, service
 
@@ -1192,7 +1192,7 @@ Bind parameters to a package. All of the actions within the package inherit thos
 {: shortdec}
 
 ```
-ibmcloud fn package bind PACKAGE_NAME [--annotation ANNOTATION_KEY ANNOTATION_VALUE] [--annotation-file FILE] [--param KEY VALUE] [--param-file FILE]
+ibmcloud fn package bind PACKAGE_NAME BOUND_PACKAGE_NAME [--annotation ANNOTATION_KEY ANNOTATION_VALUE] [--annotation-file FILE] [--param KEY VALUE] [--param-file FILE]
 ```
 {: pre}
 
@@ -1200,6 +1200,9 @@ ibmcloud fn package bind PACKAGE_NAME [--annotation ANNOTATION_KEY ANNOTATION_VA
 <dl>
 <dt>`PACKAGE_NAME`</dt>
 <dd>The name of the package. This value is required. </dd>
+  
+<dt>`BOUND_PACKAGE_NAME`</dt>
+<dd>The name of the package binding. This value is required. </dd>
 
 <dt>`--annotation` `ANNOTATION_KEY` `ANNOTATION_VALUE`, `-a` `ANNOTATION_KEY` `ANNOTATION_VALUE`</dt>
 <dd>Annotations are specified in a `KEY` `VALUE` format. To include more than one annotation, specify this option for each annotation. This flag is optional.</dd>
@@ -1217,7 +1220,7 @@ ibmcloud fn package bind PACKAGE_NAME [--annotation ANNOTATION_KEY ANNOTATION_VA
 **Example**
 
 ```
-ibmcloud fn package bind --param name Bob
+ibmcloud fn package bind hellopkg hellopkgbind --param name Bob
 ```
 {: pre}
 

@@ -76,6 +76,7 @@ ibmcloud fn action create ACTION_NAME APP_FILE [--annotation ANNOTATION_KEY ANNO
 <dd>The runtime for your app. This flag is optional. If no <code>VALUE</code> is specified, the default version for the detected runtime is used.
     Possible <code>VALUES</code> for the <code>--kind</code> option.
         <table>
+<caption>Table 1. Supported runtimes</caption>
     <tr>
     <th>Language</th>
     <th>Kind identifier</th>
@@ -116,7 +117,6 @@ ibmcloud fn action create ACTION_NAME APP_FILE [--annotation ANNOTATION_KEY ANNO
     <td>Other languages are supported by using Docker actions.</td>
     </tr>
 </table>
-{: caption="Table 1. Supported runtimes" caption-side="top"}
         </dd>
 
 <dt><code>--logsize</code> <code>LIMIT</code>, <code>-l</code> <code>LIMIT</code></dt>
@@ -364,6 +364,7 @@ ibmcloud fn action update ACTION_NAME APP_FILE [--annotation ANNOTATION_KEY ANNO
 <dd>The runtime for your app. This flag is optional. If no VALUE is specified, the default version for the detected runtime is used.
     Possible values for the <code>--kind</code> option.
     <table>
+<caption>Table 1. Supported runtimes</caption>
     <tr>
     <th>Language</th>
     <th>Kind identifier</th>
@@ -404,7 +405,6 @@ ibmcloud fn action update ACTION_NAME APP_FILE [--annotation ANNOTATION_KEY ANNO
     <td>Other languages are supported by using Docker actions.</td>
     </tr>
 </table>
-{: caption="Table 1. Supported runtimes" caption-side="top"}
         </dd>
 
 <dt><code>--logsize</code> <code>LIMIT</code>, <code>-l</code> <code>LIMIT</code></dt>

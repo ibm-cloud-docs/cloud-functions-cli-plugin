@@ -1867,7 +1867,7 @@ ibmcloud fn service unbind SERVICE PACKAGE_or_ACTION_NAME
 <dt><code>SERVICE</code></dt>
 <dd>The name of the service.</dd>
 
-<dt>`PACKAGE_or_`<code>ACTION_NAME</code></dt>
+<dt><code>PACKAGE_or_ACTION_NAME</code></dt>
 <dd>The name of the package or action to unbind the credentials from.</dd>
 </dl>
 
@@ -1908,7 +1908,7 @@ ibmcloud fn trigger create TRIGGER_NAME [--annotation ANNOTATION_KEY ANNOTATION_
 <dt><code>--annotation-file</code> <code>FILE</code>, <code>-A</code> <code>FILE</code></dt>
 <dd>A JSON file that contains annotation in a <code>KEY</code> <code>VALUE</code> format. This flag is optional.</dd>
 
-<dt>`--feed` <code>ACTION_NAME</code>, `-f` <code>ACTION_NAME</code></dt>
+<dt><code>--feed ACTION_NAME</code>, <code>-f ACTION_NAME</code></dt>
 <dd>Sets the type of trigger as a feed. This flag is optional.</dd>
 
 <dt><code>--param</code> <code>KEY</code> <code>VALUE</code>, <code>-p</code> <code>KEY</code> <code>VALUE</code></dt>

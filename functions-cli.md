@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2021
-lastupdated: "2021-10-12"
+  years: 2017, 2022
+lastupdated: "2022-01-07"
 
 keywords: managing actions, manage, activation, action logs, changing runtime, delete, namespace, cli, rule, trigger, deployment, list, package, property, sdk, service
 
@@ -74,7 +74,7 @@ ibmcloud fn action create ACTION_NAME APP_FILE [--annotation ANNOTATION_KEY ANNO
     </tr>
     <tr>
     <td>Python</td>
-    <td><code>python:3.7</code> (default), <code>python:3.6</code></td>
+    <td><code>python:3.7</code> (default)</td>
     </tr>
     <tr>
     <td>Swift</td>
@@ -82,15 +82,15 @@ ibmcloud fn action create ACTION_NAME APP_FILE [--annotation ANNOTATION_KEY ANNO
     </tr>
     <tr>
     <td>PHP</td>
-    <td><code>php:7.3</code> (default)</td>
+    <td><code>php:7.4</code> (default)</td>
     </tr>
     <tr>
     <td>Go</td>
-    <td><code>go:1.15</code> (default)</td>
+    <td><code>go:1.17</code> (default)</td>
     </tr>
     <tr>
     <td>Ruby</td>
-    <td><code>ruby:2.5</code> (default)</td>
+    <td><code>ruby:2.6</code> (default)</td>
     </tr>
     <tr>
     <td>Java</td>
@@ -362,7 +362,7 @@ ibmcloud fn action update ACTION_NAME APP_FILE [--annotation ANNOTATION_KEY ANNO
     </tr>
     <tr>
     <td>Python</td>
-    <td><code>python:3.7</code> (default), <code>python:3.6</code></td>
+    <td><code>python:3.7</code> (default)</td>
     </tr>
     <tr>
     <td>Swift</td>
@@ -370,15 +370,15 @@ ibmcloud fn action update ACTION_NAME APP_FILE [--annotation ANNOTATION_KEY ANNO
     </tr>
     <tr>
     <td>PHP</td>
-    <td><code>php:7.3</code> (default)</td>
+    <td><code>php:7.4</code> (default)</td>
     </tr>
     <tr>
     <td>Go</td>
-    <td><code>go:1.15</code> (default)</td>
+    <td><code>go:1.17</code> (default)</td>
     </tr>
     <tr>
     <td>Ruby</td>
-    <td><code>ruby:2.5</code> (default)</td>
+    <td><code>ruby:2.6</code> (default)</td>
     </tr>
     <tr>
     <td>Java</td>

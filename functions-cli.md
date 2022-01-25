@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-01-14"
+lastupdated: "2022-01-25"
 
 keywords: managing actions, manage, activation, action logs, changing runtime, delete, namespace, cli, rule, trigger, deployment, list, package, property, sdk, service
 
@@ -66,7 +66,7 @@ ibmcloud fn action create ACTION_NAME APP_FILE [--annotation ANNOTATION_KEY ANNO
         | Language | Kind identifier |
 | -------------- | -------------- |
 | Node.js | `nodejs:12` (default) |
-| Python | `python:3.7` (default) |
+| Python | `python:3.9` (default) |
 | Swift | `swift:4.2` (default) |
 | PHP | `php:7.4` (default) |
 | Go | `go:1.17` (default) |
@@ -332,7 +332,7 @@ ibmcloud fn action update ACTION_NAME APP_FILE [--annotation ANNOTATION_KEY ANNO
     | Language | Kind identifier |
 | -------------- | -------------- |
 | Node.js | `nodejs:12` (default) |
-| Python | `python:3.7` (default) |
+| Python | `python:3.9` (default) |
 | Swift | `swift:4.2` (default) |
 | PHP | `php:7.4` (default) |
 | Go | `go:1.17` (default) |

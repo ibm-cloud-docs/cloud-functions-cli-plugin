@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-01-25"
+lastupdated: "2022-02-03"
 
 keywords: managing actions, manage, activation, action logs, changing runtime, delete, namespace, cli, rule, trigger, deployment, list, package, property, sdk, service
 
@@ -64,7 +64,7 @@ ibmcloud fn action create ACTION_NAME APP_FILE [--annotation ANNOTATION_KEY ANNO
 :    The runtime for your app. This flag is optional. If no `VALUE` is specified, the default version for the detected runtime is used.
     Possible `VALUES` for the `--kind` option.
         | Language | Kind identifier |
-| -------------- | -------------- |
+| ---- | -------------- |
 | Node.js | `nodejs:12` (default) |
 | Python | `python:3.9` (default) |
 | Swift | `swift:4.2` (default) |
@@ -330,7 +330,7 @@ ibmcloud fn action update ACTION_NAME APP_FILE [--annotation ANNOTATION_KEY ANNO
 :    The runtime for your app. This flag is optional. If no VALUE is specified, the default version for the detected runtime is used.
     Possible values for the `--kind` option.
     | Language | Kind identifier |
-| -------------- | -------------- |
+| ---- | -------------- |
 | Node.js | `nodejs:12` (default) |
 | Python | `python:3.9` (default) |
 | Swift | `swift:4.2` (default) |
@@ -653,7 +653,7 @@ ibmcloud fn api delete BASE_PATH API_NAME API_PATH API_VERB
 {: pre}
 
 #### Command options
-{: #cli_api_create_command}
+{: #cli_api_delete_command}
 
 
 `BASE_PATH`
@@ -677,7 +677,7 @@ ibmcloud fn api delete BASE_PATH API_NAME API_PATH API_VERB
 
 
 #### Example
-{: #cli_api_create_example}
+{: #cli_api_delete_example}
 
 ```sh
 ibmcloud fn api delete /hello /world get

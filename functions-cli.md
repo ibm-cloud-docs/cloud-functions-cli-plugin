@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-09-21"
+lastupdated: "2022-09-22"
 
 keywords: managing actions, manage, activation, action logs, changing runtime, delete, namespace, cli, rule, trigger, deployment, list, package, property, sdk, service
 
@@ -1944,6 +1944,7 @@ ibmcloud fn trigger update mytrigger --trigger-param name Jim
 ibmcloud fn trigger update mytrigger --feed-param cron "0,1,2,3,4"
 ```
 {: pre}
+
 
 
 

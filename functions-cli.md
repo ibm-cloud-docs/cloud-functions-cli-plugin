@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2022
-lastupdated: "2022-09-22"
+  years: 2017, 2023
+lastupdated: "2023-05-24"
 
 keywords: managing actions, manage, activation, action logs, changing runtime, delete, namespace, cli, rule, trigger, deployment, list, package, property, sdk, service
 
@@ -13,7 +13,7 @@ subcollection: cloud-functions-cli-plugin
 {{site.data.keyword.attribute-definition-list}}
 
 
-# {{site.data.keyword.openwhisk_short}} CLI
+# {{site.data.keyword.openwhisk_short}} CLI 
 {: #functions-cli}
 
 Run these commands to manage the entities that make up your functions.
@@ -66,8 +66,7 @@ ibmcloud fn action create ACTION_NAME APP_FILE [--annotation ANNOTATION_KEY ANNO
         | Language | Kind identifier |
 | ---- | -------------- |
 | Node.js | `nodejs:16` (default) |
-| Python | `python:3.9` (default) |
-| Swift | `swift:4.2` (default) |
+| Python | `python:3.11` (default) |
 | PHP | `php:8.1` (default) |
 | Go | `go:1.19` (default) |
 | Ruby | `ruby:2.6` (default) |
@@ -332,8 +331,7 @@ ibmcloud fn action update ACTION_NAME APP_FILE [--annotation ANNOTATION_KEY ANNO
     | Language | Kind identifier |
 | ---- | -------------- |
 | Node.js | `nodejs:16` (default) |
-| Python | `python:3.9` (default) |
-| Swift | `swift:4.2` (default) |
+| Python | `python:3.11` (default) |
 | PHP | `php:8.1` (default) |
 | Go | `go:1.19` (default) |
 | Ruby | `ruby:2.6` (default) |

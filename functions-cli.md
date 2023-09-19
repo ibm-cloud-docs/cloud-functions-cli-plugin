@@ -61,7 +61,7 @@ ibmcloud fn action create ACTION_NAME APP_FILE [--annotation ANNOTATION_KEY ANNO
 :    The Docker Hub user name and the name of the Docker image in Docker Hub to run the action. This flag is required for creating actions from Docker images.
 
 `--kind` `LANGUAGE`
-:    The runtime for your app. This flag is optional. If no `VALUE` is specified, the default version for the detected runtime is used. Possible `VALUES` for the `--kind` option.
+:    The runtime for your app. This flag is optional. If no `VALUE` is specified, the default version for the detected runtime is used. Possible values for the `--kind` option.
 :    | Language | Kind identifier |
 | ---- | -------------- |
 | Node.js | `nodejs:20` (default) |
@@ -323,9 +323,8 @@ ibmcloud fn action update ACTION_NAME APP_FILE [--annotation ANNOTATION_KEY ANNO
 :    The Docker Hub user name and the name of the Docker image in Docker Hub to run the action. This flag is required for creating actions from Docker images.
 
 `--kind LANGUAGE`
-:    The runtime for your app. This flag is optional. If no VALUE is specified, the default version for the detected runtime is used.
-    Possible values for the `--kind` option.
-    | Language | Kind identifier |
+:    The runtime for your app. This flag is optional. If no VALUE is specified, the default version for the detected runtime is used. Possible values for the `--kind` option.
+:    | Language | Kind identifier |
 | ---- | -------------- |
 | Node.js | `nodejs:20` (default) |
 | Python | `python:3.11` (default) |

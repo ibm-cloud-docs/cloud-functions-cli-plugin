@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-05-24"
+lastupdated: "2023-09-19"
 
 keywords: managing actions, manage, activation, action logs, changing runtime, delete, namespace, cli, rule, trigger, deployment, list, package, property, sdk, service
 
@@ -61,17 +61,14 @@ ibmcloud fn action create ACTION_NAME APP_FILE [--annotation ANNOTATION_KEY ANNO
 :    The Docker Hub user name and the name of the Docker image in Docker Hub to run the action. This flag is required for creating actions from Docker images.
 
 `--kind` `LANGUAGE`
-:    The runtime for your app. This flag is optional. If no `VALUE` is specified, the default version for the detected runtime is used.
-    Possible `VALUES` for the `--kind` option.
-        | Language | Kind identifier |
+:    The runtime for your app. This flag is optional. If no `VALUE` is specified, the default version for the detected runtime is used. Possible `VALUES` for the `--kind` option.
+:    | Language | Kind identifier |
 | ---- | -------------- |
-| Node.js | `nodejs:16` (default) |
+| Node.js | `nodejs:20` (default) |
 | Python | `python:3.11` (default) |
 | PHP | `php:8.1` (default) |
-| Go | `go:1.19` (default) |
-| Ruby | `ruby:2.6` (default) |
+| Go | `go:1.21` (default) |
 | Java | `java (JDK 8)` (default) |
-| .NET Core | `dotnet:2.2` (default) |
 {: caption="Table 1. Supported runtimes" caption-side="bottom"}
 
 Other languages are supported by using Docker actions.
@@ -330,13 +327,11 @@ ibmcloud fn action update ACTION_NAME APP_FILE [--annotation ANNOTATION_KEY ANNO
     Possible values for the `--kind` option.
     | Language | Kind identifier |
 | ---- | -------------- |
-| Node.js | `nodejs:16` (default) |
+| Node.js | `nodejs:20` (default) |
 | Python | `python:3.11` (default) |
 | PHP | `php:8.1` (default) |
-| Go | `go:1.19` (default) |
-| Ruby | `ruby:2.6` (default) |
+| Go | `go:1.21` (default) |
 | Java | `java (JDK 8)` (default) |
-| .NET Core | `dotnet:2.2` (default) |
 {: caption="Table 1. Supported runtimes" caption-side="bottom"}
 
 Other languages are supported by using Docker actions.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-05-24"
+lastupdated: "2023-09-19"
 
 keywords: managing actions, manage, activation, action logs, changing runtime, delete, namespace, cli, rule, trigger, deployment, list, package, property, sdk, service
 
@@ -19,7 +19,7 @@ subcollection: cloud-functions-cli-plugin
 Run these commands to manage the entities that make up your functions.
 {: shortdec}
 
-## Action commands
+## Action commands 
 {: #cli_action}
 
 Create, invoke, list, and delete actions.
@@ -43,10 +43,10 @@ ibmcloud fn action create ACTION_NAME APP_FILE [--annotation ANNOTATION_KEY ANNO
 {: #cli_action_create-options}
 
 `--annotation` `ANNOTATION_KEY` `ANNOTATION_VALUE`, `-a` `ANNOTATION_KEY` `ANNOTATION_VALUE`
-:    Annotations are specified in a `KEY` `VALUE` format. To include more than one annotation, specify this option for each annotation. This flag is optional.
+:    Annotations are specified in a `KEY` `VALUE` format. To include more than one annotation, specify this option for each annotation. This value is optional.
 
 `--annotation-file` `FILE`, `-A` `FILE`
-:    A JSON file that contains annotation in a `KEY` `VALUE` format. This flag is optional.
+:    A JSON file that contains annotation in a `KEY` `VALUE` format. This value is optional.
 
 `ACTION_NAME`
 :    The name of the action. To include the action in a package, enter the name in the format `PACKAGE_NAME`/`ACTION_NAME`. This value is required. 
@@ -58,42 +58,28 @@ ibmcloud fn action create ACTION_NAME APP_FILE [--annotation ANNOTATION_KEY ANNO
 :    Treat the action as the name of an existing action.
 
 `--docker` `DOCKER_HUB_USERNAME`/`IMAGE_NAME`
-:    The Docker Hub user name and the name of the Docker image in Docker Hub to run the action. This flag is required for creating actions from Docker images.
+:    The Docker Hub user name and the name of the Docker image in Docker Hub to run the action. This option is required for creating actions from Docker images.
 
 `--kind` `LANGUAGE`
-:    The runtime for your app. This flag is optional. If no `VALUE` is specified, the default version for the detected runtime is used.
-    Possible `VALUES` for the `--kind` option.
-        | Language | Kind identifier |
-| ---- | -------------- |
-| Node.js | `nodejs:16` (default) |
-| Python | `python:3.11` (default) |
-| PHP | `php:8.1` (default) |
-| Go | `go:1.19` (default) |
-| Ruby | `ruby:2.6` (default) |
-| Java | `java (JDK 8)` (default) |
-| .NET Core | `dotnet:2.2` (default) |
-{: caption="Table 1. Supported runtimes" caption-side="bottom"}
-
-Other languages are supported by using Docker actions.
+:    The runtime for your app. This value is optional. If no `VALUE` is specified, the default version for the detected runtime is used. For possible values for the `--kind` option, see [Runtimes](/docs/openwhisk?topic=openwhisk-runtimes).
         
-
 `--logsize` `LIMIT`, `-l` `LIMIT`
 :    The maximum log size in MB for the action. The default value is 10 MB.
 
 `--main` `ENTRY_METHOD_NAME`
-:    If the action's entry method is not `main`, specify the custom name. This flag is required when the entry method is not `main`. For some runtimes, such as Java, the name must be the fully qualified method.
+:    If the action's entry method is not `main`, specify the custom name. This option is required when the entry method is not `main`. For some runtimes, such as Java, the name must be the fully qualified method.
 
 `--memory` `MEMORY_LIMIT`
 :    The maximum memory limit in MB for your action. The default is 256 MB.
 
 `--native`
-:    You can use the `--native` argument as shorthand for `--docker openwhisk/dockerskeleton`. By using this argument, you can create and deploy an executable that runs inside the standard Docker action SDK. \n - When you create a Docker image, an executable is created inside the container at `/action/exec`. Copy the `/action/exec` file to your local file system and compress it into `exec.zip`. \n - Create a Docker action that receives the executable as initialization data. The `--native` argument replaces the `--docker openwhisk/dockerskeleton` argument.
+:    You can use the `--native` argument as shorthand for `--docker openwhisk/dockerskeleton`. By using this argument, you can create and deploy an executable that runs inside the standard Docker action SDK. When you create a Docker image, an executable is created inside the container at `/action/exec`. Copy the `/action/exec` file to your local file system and compress it into `exec.zip`. Create a Docker action that receives the executable as initialization data. The `--native` argument replaces the `--docker openwhisk/dockerskeleton` argument.
 
 `--param` `KEY` `VALUE`, `-p` `KEY` `VALUE`
-:    Parameter `VALUES` in the `KEY` `VALUE` format. This flag is optional.
+:    Parameter `VALUES` in the `KEY` `VALUE` format. This value is optional.
 
 `--param-file` `FILE`, `-P` `FILE`
-:    A JSON file that contains parameter `KEYS` and `VALUES`. This flag is optional.
+:    A JSON file that contains parameter `KEYS` and `VALUES`. This value is optional.
 
 `--sequence` `ACTION_NAME`, `ACTION_NAME`
 :    Create an action sequence and include the names of the related actions. Separate the `ACTION_NAMEs` by commas.
@@ -167,16 +153,16 @@ ibmcloud fn action get ACTION_NAME [--save] [--save-as FILENAME] [--summary] [--
 :    The name of an action. This value is required.
 
 `--save`
-:    You can get and locally save the code that is associated with an existing action, except for sequences and Docker actions. The `FILENAME` corresponds with an existing action name in the current working directory and the file extension  corresponds to the action kind. For example, for action code that is an archive file, an extension of .zip is used. This flag is optional.
+:    You can get and locally save the code that is associated with an existing action, except for sequences and Docker actions. The `FILENAME` corresponds with an existing action name in the current working directory and the file extension  corresponds to the action kind. For example, for action code that is an archive file, an extension of .zip is used. This value is optional.
 
 `--save-as` `FILENAME`
-:    Save the code for actions in a custom-named file by providing a file path, `FILENAME`, and extension. This flag is optional.
+:    Save the code for actions in a custom-named file by providing a file path, `FILENAME`, and extension. This value is optional.
 
 `--summary`
-:    Get a summary of the action details. Parameters with the prefix "*" are bound; parameters with the prefix "**" are bound and finalized. This flag is optional.
+:    Get a summary of the action details. Parameters with the prefix `"*"` are bound; parameters with the prefix `"**"` are bound and finalized. This value is optional.
 
 `--url`
-:    Get the URL only for the action. This flag is optional.
+:    Get the URL only for the action. This value is optional.
 
 
 #### Example
@@ -233,16 +219,16 @@ ibmcloud fn action invoke ACTION_NAME [--blocking] [--param KEY VALUE] [--param-
 :    The name of the action. This value is required. 
 
 `--blocking, -b`
-:    Blocking invocations use a request and response style to wait for the activation result to be available. The wait period is the lesser of 60 seconds or the action's [time `LIMIT` `VALUE`](/docs/openwhisk?topic=openwhisk-limits). This flag is optional.
+:    Blocking invocations use a request and response style to wait for the activation result to be available. The wait period is the lesser of 60 seconds or the action's [time `LIMIT` `VALUE`](/docs/openwhisk?topic=openwhisk-limits). This value is optional.
 
 `--param` `KEY` `VALUE`, `-p` `KEY` `VALUE`
-:    Parameter `VALUES` in the `KEY` `VALUE` format. This flag is optional.
+:    Parameter `VALUES` in the `KEY` `VALUE` format. This value is optional.
 
 `--param-file` `FILE`, `-P` `FILE`
-:    A JSON file that contains parameter `KEYS` and `VALUES`. This flag is optional.
+:    A JSON file that contains parameter `KEYS` and `VALUES`. This value is optional.
 
 `--result, -r`
-:    The result of the app code is displayed as the output of the command. If this option is not specified, the activation ID is displayed. The invocation is blocking when this option is specified. This flag is optional.
+:    The result of the app code is displayed as the output of the command. If this option is not specified, the activation ID is displayed. The invocation is blocking when this option is specified. This value is optional.
 
 
 
@@ -308,10 +294,10 @@ ibmcloud fn action update ACTION_NAME APP_FILE [--annotation ANNOTATION_KEY ANNO
 {: #cli_action_update_command}
 
 `--annotation` `ANNOTATION_KEY` `ANNOTATION_VALUE`, `-a` `ANNOTATION_KEY` `ANNOTATION_VALUE`
-:    Annotations are specified in a `KEY` `VALUE` format. To include more than one annotation, specify this option for each annotation. This flag is optional.
+:    Annotations are specified in a `KEY` `VALUE` format. To include more than one annotation, specify this option for each annotation. This value is optional.
 
 `--annotation-file` `FILE`, `-A` `FILE`
-:    A JSON file that contains annotation in a `KEY` `VALUE` format. This flag is optional.
+:    A JSON file that contains annotation in a `KEY` `VALUE` format. This value is optional.
 
 `ACTION_NAME`
 :    The name of the action. To include the action in a package, enter the name in the format `PACKAGE_NAME`/`ACTION_NAME`. This value is required. 
@@ -323,42 +309,29 @@ ibmcloud fn action update ACTION_NAME APP_FILE [--annotation ANNOTATION_KEY ANNO
 :    Treat the action as the name of an existing action.
 
 `--docker DOCKER_HUB_USERNAME/IMAGE_NAME`
-:    The Docker Hub user name and the name of the Docker image in Docker Hub to run the action. This flag is required for creating actions from Docker images.
+:    The Docker Hub user name and the name of the Docker image in Docker Hub to run the action. This option is required for creating actions from Docker images.
 
 `--kind LANGUAGE`
-:    The runtime for your app. This flag is optional. If no VALUE is specified, the default version for the detected runtime is used.
-    Possible values for the `--kind` option.
-    | Language | Kind identifier |
-| ---- | -------------- |
-| Node.js | `nodejs:16` (default) |
-| Python | `python:3.11` (default) |
-| PHP | `php:8.1` (default) |
-| Go | `go:1.19` (default) |
-| Ruby | `ruby:2.6` (default) |
-| Java | `java (JDK 8)` (default) |
-| .NET Core | `dotnet:2.2` (default) |
-{: caption="Table 1. Supported runtimes" caption-side="bottom"}
-
-Other languages are supported by using Docker actions.
+:    The runtime for your app. This value is optional. If no VALUE is specified, the default version for the detected runtime is used. For possible values for the `--kind` option, see [Runtimes](/docs/openwhisk?topic=openwhisk-runtimes).
         
 
 `--logsize` `LIMIT`, `-l` `LIMIT`
 :    The maximum log size in MB for the action. The default value is 10 MB.
 
 `--main ENTRY_METHOD_NAME`
-:    If the action's entry method is not `main`, specify the custom name. This flag is required when the entry method is not `main`. For some runtimes, such as Java, the name must be the fully qualified method.
+:    If the action's entry method is not `main`, specify the custom name. This option is required when the entry method is not `main`. For some runtimes, such as Java, the name must be the fully qualified method.
 
 `--memory MEMORY_LIMIT`
 :    The maximum memory limit in MB for your action. The default is 256 MB.
 
 `--native`
-:    You can use the `--native` argument as shorthand for `--docker openwhisk/dockerskeleton`. By using this argument, you can create and deploy an executable that runs inside the standard Docker action SDK. \n - When you create a Docker image, an executable is created inside the container at `/action/exec`. Copy the `/action/exec` file to your local file system and compress it into `exec.zip`. \n - Create a Docker action that receives the executable as initialization data. The `--native` argument replaces the `--docker openwhisk/dockerskeleton` argument.
+:    You can use the `--native` argument as shorthand for `--docker openwhisk/dockerskeleton`. By using this argument, you can create and deploy an executable that runs inside the standard Docker action SDK. When you create a Docker image, an executable is created inside the container at `/action/exec`. Copy the `/action/exec` file to your local file system and compress it into `exec.zip`. Create a Docker action that receives the executable as initialization data. The `--native` argument replaces the `--docker openwhisk/dockerskeleton` argument.
 
 `--param` `KEY` `VALUE`, `-p` `KEY` `VALUE`
-:    Parameter `VALUES` in the `KEY` `VALUE` format. This flag is optional.
+:    Parameter `VALUES` in the `KEY` `VALUE` format. This value is optional.
 
 `--param-file` `FILE`, `-P` `FILE`
-:    A JSON file that contains parameters `KEYS` and `VALUES`. This flag is optional.
+:    A JSON file that contains parameters `KEYS` and `VALUES`. This value is optional.
 
 `--sequence` `ACTION_NAME`, `ACTION_NAME`
 :    Create an action sequence by specifying the name of related actions.
@@ -411,10 +384,10 @@ ibmcloud fn activation get [ACTIVATION_ID] [FIELD_FILTER] [--last] [--summary]
 :    A field in the metadata to display information from. For example, to display the logs field, run `ibmcloud fn activation get ACTIVATION_ID logs`. This value is optional.
 
 `--last, -l`
-:    Display the metadata for the most recent activation. This flag is optional.
+:    Display the metadata for the most recent activation. This value is optional.
 
 `--summary, -s`
-:    Display the result response only from the activation details. This flag is optional.
+:    Display the result response only from the activation details. This value is optional.
 
 
 #### Example
@@ -490,10 +463,10 @@ ibmcloud fn activation logs [ACTIVATION_ID] [--last] [--strip]
 :    The ID for a specific activation. Use `ibmcloud fn activation list` to retrieve a list of available IDs. This value is required, unless the `--last` or `-l` option is specified.
 
 `--last, -l`
-:    Display the logs for the most recent activation. This flag is optional.
+:    Display the logs for the most recent activation. This value is optional.
 
 `--strip, -r`
-:    Display the log message only; exclude the timestamp and stream information. This flag is optional.
+:    Display the log message only; exclude the timestamp and stream information. This value is optional.
 
 
 #### Example
@@ -525,19 +498,19 @@ ibmcloud fn activation poll [NAMESPACE] [ACTION_NAME] [--exit SECONDS] [--since-
 :    An action name. Poll activations for a namespace, an action, or a space. This value is optional. If a namespace or action is not specified, the space is polled.
 
 `--exit` `SECONDS`, `-e` `SECONDS`
-:    Poll activations for a specified number of seconds and then exit. This flag is optional.
+:    Poll activations for a specified number of seconds and then exit. This value is optional.
 
 `--since-days` `DAYS`
-:    Start polling for activations a specified number of days ago. This flag is optional.
+:    Start polling for activations a specified number of days ago. This value is optional.
 
 `--since-hours` `HOURS`
-:    Start polling for activations a specified number of hours ago. This flag is optional.
+:    Start polling for activations a specified number of hours ago. This value is optional.
 
 `--since-minutes` `MINUTES`
-:    Start polling for activations a specified number of minutes ago. This flag is optional.
+:    Start polling for activations a specified number of minutes ago. This value is optional.
 
 `--since-seconds` `SECONDS`
-:    Start polling for activations a specified number of seconds ago. This flag is optional.
+:    Start polling for activations a specified number of seconds ago. This value is optional.
 
 
 #### Example
@@ -566,7 +539,7 @@ ibmcloud fn activation result [ACTIVATION_ID] [--last] [--strip]
 :    The ID for a specific activation. Use `ibmcloud fn activation list` to retrieve a list of available IDs. This value is required, unless the `--last` or `-l` option is specified.
 
 `--last, -l`
-:    Display the result for the most recent activation. This flag is optional.
+:    Display the result for the most recent activation. This value is optional.
 
 
 #### Example
@@ -603,10 +576,10 @@ ibmcloud fn deploy [--apihost HOST] [--auth KEY] [--config FILE][--deployment FI
 {: #cli_deploy_command}
 
 `--apihost HOST`
-:    The `wsk` API host. This flag is optional.
+:    The `wsk` API host. This value is optional.
 
 `--auth` `KEY`, `-u` `KEY`
-:    The `wsk` authorization `KEY`. This flag is optional.
+:    The `wsk` authorization `KEY`. This value is optional.
 
 `--config` `FILE`
 :    The configuration file. The default is `$HOME/.wskprops`.
@@ -615,16 +588,16 @@ ibmcloud fn deploy [--apihost HOST] [--auth KEY] [--config FILE][--deployment FI
 :    The path to the deployment file.
 
 `--manifest` `FILE`, `-m` `FILE`
-:    The path to the manifest file. This flag is required if the manifest.yaml is not in the current directory.
+:    The path to the manifest file. This value is required if the manifest.yaml is not in the current directory.
 
 `--namespace` `NAMESPACE`, `-n` `NAMESPACE`
 :    The name or ID for a namespace.
 
 `--param` `KEY` `VALUE`, `-p` `KEY` `VALUE`
-:    Parameter `VALUES` in the `KEY` `VALUE` format. This flag is optional.
+:    Parameter `VALUES` in the `KEY` `VALUE` format. This value is optional.
 
 `--param-file` `FILE`, `-P` `FILE`
-:    A JSON file that contains parameter `KEYS` and `VALUES`. This flag is optional.
+:    A JSON file that contains parameter `KEYS` and `VALUES`. This value is optional.
 
 `--preview` 
 :    Display the deployment plan before you deploy.
@@ -665,10 +638,10 @@ ibmcloud fn undeploy [--apihost HOST] [--auth KEY] [--config FILE] [--deployment
 {: #cli_undeploy_command}
 
 `--apihost HOST`
-:    The `wsk` API host. This flag is optional.
+:    The `wsk` API host. This value is optional.
 
 `--auth` `KEY`, `-u` `KEY`
-:    The `wsk` authorization `KEY`. This flag is optional.
+:    The `wsk` authorization `KEY`. This value is optional.
 
 `--config` `FILE`
 :    The configuration file. The default is `$HOME/.wskprops`.
@@ -677,16 +650,16 @@ ibmcloud fn undeploy [--apihost HOST] [--auth KEY] [--config FILE] [--deployment
 :    The path to the deployment file.
 
 `--manifest` `FILE`, -m `FILE`
-:    The path to the manifest file. This flag is required if the manifest.yaml is not in the current directory.
+:    The path to the manifest file. This value is required if the manifest.yaml is not in the current directory.
 
 `--namespace` `NAMESPACE`, `-n` `NAMESPACE`
 :    The name or ID for a namespace.
 
 `--param` `KEY` `VALUE`, `-p` `KEY` `VALUE`
-:    Parameter `VALUES` in the `KEY` `VALUE` format. This flag is optional.
+:    Parameter `VALUES` in the `KEY` `VALUE` format. This value is optional.
 
 `--param-file` `FILE`, `-P` `FILE`
-:    A JSON file that contains parameter `KEYS` and `VALUES`. This flag is optional.
+:    A JSON file that contains parameter `KEYS` and `VALUES`. This value is optional.
 
 `--preview` 
 :    Display the result of the command without running the command.
@@ -773,7 +746,7 @@ ibmcloud fn namespace create NAMESPACE [--description DESCRIPTION]
 :    The name for a namespace. Do not include hyphens (-) in the name. This value is required.
 
 `--description DESCRIPTION`, `-n DESCRIPTION`
-:    Write your own unique description to help you identify the namespace. If your description is more than one word, include quotation marks (") around your description. This flag is optional.
+:    Write your own unique description to help you identify the namespace. If your description is more than one word, include quotation marks (") around your description. This value is optional.
 
 
 
@@ -822,13 +795,13 @@ ibmcloud fn namespace get NAMESPACE [--auth KEY] [--name-sort] [--properties]
 :    The name or ID for a namespace. This value is required.
 
 `--auth` `KEY`, `-u` `KEY`
-:    The `wsk` authorization `KEY`. This flag is optional.
+:    The `wsk` authorization `KEY`. This value is optional.
 
 `--name-sort, -n`
-:    Sort the list of returned namespaces by name, otherwise the list is sorted by creation date. This flag is optional. 
+:    Sort the list of returned namespaces by name, otherwise the list is sorted by creation date. This value is optional. 
 
 `--properties`
-:    Display the namespace properties instead of the entities contained within it. This flag is optional. 
+:    Display the namespace properties instead of the entities contained within it. This value is optional. 
 
 
 
@@ -866,22 +839,22 @@ ibmcloud fn namespace list [--auth KEY] [--cf] [--iam] [--limit NUMBER_OF_NAMESP
 {: #cli_namespace_list_command}
 
 `--auth` `KEY`, `-u` `KEY`
-:    The `wsk` authorization `KEY`. This flag is optional.
+:    The `wsk` authorization `KEY`. This value is optional.
 
 `--cf`
-:    Display the Cloud Foundry namespaces only. IAM namespaces are not displayed. This flag is optional.
+:    Display the Cloud Foundry namespaces only. IAM namespaces are not displayed. This value is optional.
 
 `--iam`
-:    Display the IAM namespaces only. Cloud Foundry namespaces are not displayed. This flag is optional.
+:    Display the IAM namespaces only. Cloud Foundry namespaces are not displayed. This value is optional.
 
 `--limit NUMBER_OF_``NAMESPACE``S`, `-l NUMBER_OF_``NAMESPACE``S`
-:    List a specified number of namespaces. The default is 30 namespaces. This flag is optional. 
+:    List a specified number of namespaces. The default is 30 namespaces. This value is optional. 
 
 `--name-sort, -n`
-:    Sort the list of returned namespaces by name, otherwise the list is sorted by creation date. This flag is optional. 
+:    Sort the list of returned namespaces by name, otherwise the list is sorted by creation date. This value is optional. 
 
 `--skip NUMBER_OF_NAMESPACES`, `-s NUMBER_OF_``NAMESPACE``S`
-:    Exclude a specified number of the most recently created namespaces from the result. This flag is optional. 
+:    Exclude a specified number of the most recently created namespaces from the result. This value is optional. 
 
 
 #### Example
@@ -940,7 +913,7 @@ ibmcloud fn namespace update NAMESPACE [NEW_NAMESPACE_NAME] [--description DESCR
 :    The new name for a namespace. Do not include hyphens (-) in the name. This value is optional.
 
 `--description DESCRIPTION`, `-n DESCRIPTION`
-:    Write your own unique description to help you identify the namespace. If your description is more than one word, include quotation marks (") around your description. This flag is optional.
+:    Write your own unique description to help you identify the namespace. If your description is more than one word, include quotation marks (") around your description. This value is optional.
 
 
 #### Example
@@ -981,16 +954,16 @@ ibmcloud fn package bind PACKAGE_NAME BOUND_PACKAGE_NAME [--annotation ANNOTATIO
 :    The name of the package binding. This value is required. 
 
 `--annotation` `ANNOTATION_KEY` `ANNOTATION_VALUE`, `-a` `ANNOTATION_KEY` `ANNOTATION_VALUE`
-:    Annotations are specified in a `KEY` `VALUE` format. To include more than one annotation, specify this option for each annotation. This flag is optional.
+:    Annotations are specified in a `KEY` `VALUE` format. To include more than one annotation, specify this option for each annotation. This value is optional.
 
 `--annotation-file` `FILE`, `-A` `FILE`
-:    A JSON file that contains annotation in a `KEY` `VALUE` format. This flag is optional.
+:    A JSON file that contains annotation in a `KEY` `VALUE` format. This value is optional.
 
 `--param` `KEY` `VALUE`, `-p` `KEY` `VALUE`
-:    Parameter `VALUES` in the `KEY` `VALUE` format. This flag is optional.
+:    Parameter `VALUES` in the `KEY` `VALUE` format. This value is optional.
 
 `--param-file` `FILE`, `-P` `FILE`
-:    A JSON file that contains parameter `KEYS` and `VALUES`. This flag is optional.
+:    A JSON file that contains parameter `KEYS` and `VALUES`. This value is optional.
 
 
 #### Example
@@ -1019,16 +992,16 @@ ibmcloud fn package create PACKAGE_NAME [--annotation ANNOTATION_KEY ANNOTATION_
 :    The name of the package. This value is required. 
 
 `--annotation` `ANNOTATION_KEY` `ANNOTATION_VALUE`, `-a` `ANNOTATION_KEY` `ANNOTATION_VALUE`
-:    Annotations are specified in a `KEY` `VALUE` format. To include more than one annotation, specify this option for each annotation. This flag is optional.
+:    Annotations are specified in a `KEY` `VALUE` format. To include more than one annotation, specify this option for each annotation. This value is optional.
 
 `--annotation-file` `FILE`, `-A` `FILE`
-:    A JSON file that contains annotation in a `KEY` `VALUE` format. This flag is optional.
+:    A JSON file that contains annotation in a `KEY` `VALUE` format. This value is optional.
 
 `--param` `KEY` `VALUE`, `-p` `KEY` `VALUE`
-:    Parameter `VALUES` in the `KEY` `VALUE` format. This flag is optional.
+:    Parameter `VALUES` in the `KEY` `VALUE` format. This value is optional.
 
 `--param-file` `FILE`, `-P` `FILE`
-:    A JSON file that contains parameter `KEYS` `VALUE` format. This flag is optional.
+:    A JSON file that contains parameter `KEYS` `VALUE` format. This value is optional.
 
 `--shared yes|no`
 :    When specified without a value or with a value of yes, the package is shared with other users.
@@ -1093,7 +1066,7 @@ ibmcloud fn package get PACKAGE_NAME [--summary]
 :    The name of a package. This value is required.
 
 `--summary`
-:    Get a summary of the package details. Parameters with the prefix "*" are bound. This flag is optional.
+:    Get a summary of the package details. Parameters with the prefix "*" are bound. This value is optional.
 
 
 #### Example
@@ -1158,7 +1131,7 @@ ibmcloud fn package refresh /NAMESPACE
 
 
 `/NAMESPACE`
-:    A namespace ID, beginning with /. This flag is required. Run `ibmcloud fn namespace list` to get a list of namespaces to choose from.
+:    A namespace ID, beginning with /. This value is required. Run `ibmcloud fn namespace list` to get a list of namespaces to choose from.
 
 
 #### Example
@@ -1190,16 +1163,16 @@ ibmcloud fn package update PACKAGE_NAME [--annotation ANNOTATION_KEY ANNOTATION_
 :    The name of the package. This value is required. 
 
 `--annotation` `ANNOTATION_KEY` `ANNOTATION_VALUE`, `-a` `ANNOTATION_KEY` `ANNOTATION_VALUE`
-:    Annotations are specified in a `KEY` `VALUE` format. To include more than one annotation, specify this option for each annotation. This flag is optional.
+:    Annotations are specified in a `KEY` `VALUE` format. To include more than one annotation, specify this option for each annotation. This value is optional.
 
 `--annotation-file` `FILE`, `-A` `FILE`
-:    A JSON file that contains annotation in a `KEY` `VALUE` format. This flag is optional.
+:    A JSON file that contains annotation in a `KEY` `VALUE` format. This value is optional.
 
 `--param` `KEY` `VALUE`, `-p` `KEY` `VALUE`
-:    Parameter `VALUES` in the `KEY` `VALUE` format. This flag is optional.
+:    Parameter `VALUES` in the `KEY` `VALUE` format. This value is optional.
 
 `--param-file` `FILE`, `-P` `FILE`
-:    A JSON file that contains parameter `KEYS` and `VALUES`. This flag is optional.
+:    A JSON file that contains parameter `KEYS` and `VALUES`. This value is optional.
 
 `--shared yes|no`
 :    When specified without a value or with a value of `yes`, the package is shared with other users.
@@ -1244,34 +1217,34 @@ ibmcloud fn property get [--apihost HOST] [--apiversion VERSION] [--auth KEY] [-
 {: #cli_prop_get_command}
 
 `--all`
-:    View all properties for the `wsk` CLI. This flag is optional.
+:    View all properties for the `wsk` CLI. This value is optional.
 
 `---apibuild`
-:    The `wsk` API build information. This flag is optional.
+:    The `wsk` API build information. This value is optional.
 
 `--apibuildno`
-:    The `wsk` API build number. This flag is optional.
+:    The `wsk` API build number. This value is optional.
 
 `--apihost` `HOST`
-:    The `wsk` API host. This flag is optional.
+:    The `wsk` API host. This value is optional.
 
 `--apiversion` `VERSION`
-:    The `wsk` API version. This flag is optional.
+:    The `wsk` API version. This value is optional.
 
 `--auth` `KEY`, `-u` `KEY`
-:    The `wsk` authorization `KEY`. This flag is optional.
+:    The `wsk` authorization `KEY`. This value is optional.
 
 `--cert` `STRING`
-:    The `wsk` client certificate. This flag is optional.
+:    The `wsk` client certificate. This value is optional.
 
 `--cliversion`
-:    The `wsk` CLI version. This flag is optional.
+:    The `wsk` CLI version. This value is optional.
 
 `--key` `STRING`
-:    The `wsk` client `KEY`. This flag is optional.
+:    The `wsk` client `KEY`. This value is optional.
 
 `--namespace` `NAMESPACE`
-:    An IAM namespace name or ID. This flag cannot be set for Cloud Foundry namespaces. This flag is optional.
+:    An IAM namespace name or ID. This value cannot be set for Cloud Foundry namespaces. This value is optional.
 
 
 #### Example
@@ -1285,7 +1258,7 @@ ibmcloud fn property get --auth
 ### `ibmcloud fn property set`
 {: #cli_prop_set}
 
-Set a property. At least one flag is required. After a property is set, it is retained on your workstation at `<home_dir>/.bluemix/plugins/cloud-functions/config.json`. To remove a property, run [`ibmcloud fn property unset --<property>`](#cli_prop_set).
+Set a property. At least one option is required. After a property is set, it is retained on your workstation at `<home_dir>/.bluemix/plugins/cloud-functions/config.json`. To remove a property, run [`ibmcloud fn property unset --<property>`](#cli_prop_set).
 {: shortdec}
 
 ```sh
@@ -1297,16 +1270,16 @@ ibmcloud fn property set [--auth KEY] [--cert STRING] [--key STRING] [--namespac
 {: #cli_prop_set_command}
 
 `--auth` `KEY`, -u
-:    The `wsk` authorization `KEY`. This flag is optional.
+:    The `wsk` authorization `KEY`. This value is optional.
 
 `--cert` `STRING`
-:    The `wsk`client certificate. This flag is optional.
+:    The `wsk`client certificate. This value is optional.
 
 `--key` `STRING`
-:    The `wsk` client `KEY`. This flag is optional.
+:    The `wsk` client `KEY`. This value is optional.
 
 `--namespace` `NAMESPACE`
-:    An IAM namespace name or ID. This flag cannot be set for Cloud Foundry namespaces. This flag is optional.
+:    An IAM namespace name or ID. This option cannot be set for Cloud Foundry namespaces. This value is optional.
 
 
 #### Example
@@ -1327,7 +1300,7 @@ ok: whisk namespace set to myNamespace
 ### `ibmcloud fn property unset`
 {: #cli_prop_unset}
 
-Unset a property for the `wsk` CLI. At least one flag is required.
+Unset a property for the `wsk` CLI. At least one value is required.
 {: shortdec}
 
 If properties are retained after running the `property unset` command, you can delete the `config.json` file located at `<home_dir>/.bluemix/plugins/cloud-functions/config.json` to remove all properties.
@@ -1342,22 +1315,22 @@ ibmcloud fn property unset [--apihost HOST] [--apiversion VERSION] [--auth KEY] 
 {: #cli_prop_unset_command}
 
 `--apihost` `HOST`
-:    The `wsk` API host. This flag is optional.
+:    The `wsk` API host. This value is optional.
 
 `--apiversion` `VERSION`
-:    The `wsk` API version. This flag is optional.
+:    The `wsk` API version. This value is optional.
 
 `--auth` `KEY`, `-u`
-:    The `wsk` authorization `KEY`. This flag is optional.
+:    The `wsk` authorization `KEY`. This value is optional.
 
 `--cert` `STRING`
-:    The `wsk` client certificate. This flag is optional.
+:    The `wsk` client certificate. This value is optional.
 
 `--key` `STRING`
-:    The `wsk` client `KEY`. This flag is optional.
+:    The `wsk` client `KEY`. This value is optional.
 
 `--namespace` `NAMESPACE`
-:    An IAM namespace name or ID. This flag cannot be set for Cloud Foundry namespaces. This flag is optional.
+:    An IAM namespace name or ID. This option cannot be set for Cloud Foundry namespaces. This value is optional.
 
 
 #### Example
@@ -1598,7 +1571,7 @@ ibmcloud fn sdk install COMPONENT [--limit NUMBER_OF_TRIGGERS]
 :    The SDK component, such as `docker`, `iOS`, and `bashauto`. This value is required.
 
 `--stdout, --s`
-:    Prints the bash command results to `STDOUT`. This flag is optional.
+:    Prints the bash command results to `STDOUT`. This value is optional.
 
 
 #### Example
@@ -1711,25 +1684,25 @@ ibmcloud fn trigger create TRIGGER_NAME [--annotation ANNOTATION_KEY ANNOTATION_
 :    The name of the trigger. This value is required. 
 
 `--annotation` `ANNOTATION_KEY` `ANNOTATION_VALUE`, `-a` `ANNOTATION_KEY` `ANNOTATION_VALUE`
-:    Annotations are specified in a `KEY` `VALUE` format. To include more than one annotation, specify this option for each annotation. This flag is optional.
+:    Annotations are specified in a `KEY` `VALUE` format. To include more than one annotation, specify this option for each annotation. This value is optional.
 
 `--annotation-file` `FILE`, `-A` `FILE`
-:    A JSON file that contains annotation in a `KEY` `VALUE` format. This flag is optional.
+:    A JSON file that contains annotation in a `KEY` `VALUE` format. This value is optional.
 
 `--feed ACTION_NAME`, `-f ACTION_NAME`
-:    Sets the type of trigger as a feed. This flag is optional.
+:    Sets the type of trigger as a feed. This value is optional.
 
 `--param` `KEY` `VALUE`, `-p` `KEY` `VALUE`
-:    Parameter `VALUES` in the `KEY` `VALUE` format. This flag is optional.
+:    Parameter `VALUES` in the `KEY` `VALUE` format. This value is optional.
 
 `--param-file` `FILE`, `-P` `FILE`
-:    A JSON file that contains parameter `KEYS` and `VALUES`. This flag is optional.
+:    A JSON file that contains parameter `KEYS` and `VALUES`. This value is optional.
 
 `--trigger-param` `KEY` `VALUE`, `-p` `KEY` `VALUE`
-:    Trigger parameter values in the `KEY` `VALUE` format. This flag is optional.
+:    Trigger parameter values in the `KEY` `VALUE` format. This value is optional.
 
 `--feed-param` `KEY` `VALUE`, `-p` `KEY` `VALUE`
-:    Feed parameter values in the `KEY` `VALUE` format. This flag is optional.
+:    Feed parameter values in the `KEY` `VALUE` format. This value is optional.
 
 
 #### Examples
@@ -1808,10 +1781,10 @@ ibmcloud fn trigger fire TRIGGER_NAME [--param KEY VALUE] [--param-file FILE]
 :    The name of the trigger. This value is required. 
 
 `--param` `KEY` `VALUE`, `-p` `KEY` `VALUE`
-:    Parameter `VALUES` in the `KEY` `VALUE` format. This flag is optional.
+:    Parameter `VALUES` in the `KEY` `VALUE` format. This value is optional.
 
 `--param-file` `FILE`, `-P` `FILE`
-:    A JSON file that contains parameter `KEYS` and `VALUES`. This flag is optional.
+:    A JSON file that contains parameter `KEYS` and `VALUES`. This value is optional.
 
 
 #### Example
@@ -1907,22 +1880,22 @@ ibmcloud fn trigger update TRIGGER_NAME [--annotation ANNOTATION_KEY ANNOTATION_
 :    The name of the trigger. This value is required. 
 
 `--annotation` `ANNOTATION_KEY` `ANNOTATION_VALUE`, `-a` `ANNOTATION_KEY` `ANNOTATION_VALUE`
-:    Annotations are specified in a `KEY` `VALUE` format. To include more than one annotation, specify this option for each annotation. This flag is optional.
+:    Annotations are specified in a `KEY` `VALUE` format. To include more than one annotation, specify this option for each annotation. This value is optional.
 
 `--annotation-file` `FILE`, `-A` `FILE`
-:    A JSON file that contains annotation in a `KEY` `VALUE` format. This flag is optional.
+:    A JSON file that contains annotation in a `KEY` `VALUE` format. This value is optional.
 
 `--param` `KEY` `VALUE`, `-p` `KEY` `VALUE`
-:    Parameter values in the `KEY` `VALUE` format. This flag is optional.
+:    Parameter values in the `KEY` `VALUE` format. This value is optional.
 
 `--param-file` `FILE`, `-P` `FILE`
-:    A JSON file that contains parameter `KEYS` and `VALUES`. This flag is optional.
+:    A JSON file that contains parameter `KEYS` and `VALUES`. This value is optional.
 
 `--trigger-param` `KEY` `VALUE`, `-p` `KEY` `VALUE`
-:    Trigger parameter values in the `KEY` `VALUE` format. This flag is optional.
+:    Trigger parameter values in the `KEY` `VALUE` format. This value is optional.
 
 `--feed-param` `KEY` `VALUE`, `-p` `KEY` `VALUE`
-:    Feed parameter values in the `KEY` `VALUE` format. This flag is optional.
+:    Feed parameter values in the `KEY` `VALUE` format. This value is optional.
 
 
 #### Examples

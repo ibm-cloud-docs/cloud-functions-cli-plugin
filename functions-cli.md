@@ -19,7 +19,7 @@ subcollection: cloud-functions-cli-plugin
 Run these commands to manage the entities that make up your functions.
 {: shortdec}
 
-## Action commands
+## Action commands 
 {: #cli_action}
 
 Create, invoke, list, and delete actions.

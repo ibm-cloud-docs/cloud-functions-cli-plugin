@@ -1264,6 +1264,9 @@ ibmcloud fn property get --auth
 Set a property. At least one option is required. After a property is set, it is retained on your workstation at `<home_dir>/.bluemix/plugins/cloud-functions/config.json`. To remove a property, run [`ibmcloud fn property unset --<property>`](#cli_prop_set).
 {: shortdec}
 
+
+
+
 ```sh
 ibmcloud fn property set [--auth KEY] [--cert STRING] [--key STRING] [--namespace NAMESPACE]
 ```
@@ -1282,7 +1285,7 @@ ibmcloud fn property set [--auth KEY] [--cert STRING] [--key STRING] [--namespac
 :    The `wsk` client `KEY`. This value is optional.
 
 `--namespace` `NAMESPACE`
-:    An IAM namespace name or ID. This option cannot be set for Cloud Foundry namespaces. This value is optional.
+:    An IAM-enabled namespace name.  This value is optional.
 
 
 #### Example

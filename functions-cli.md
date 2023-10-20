@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-10-19"
+lastupdated: "2023-10-20"
 
 keywords: managing actions, manage, activation, action logs, changing runtime, delete, namespace, cli, rule, trigger, deployment, list, package, property, sdk, service
 
@@ -1285,7 +1285,7 @@ ibmcloud fn property set [--auth KEY] [--cert STRING] [--key STRING] [--namespac
 :    The `wsk` client `KEY`. This value is optional.
 
 `--namespace` `NAMESPACE`
-:    An IAM-enabled namespace name.  This value is optional.
+:    An IAM-enabled namespace name or ID.
 
 
 #### Example

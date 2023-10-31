@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-09-19"
+lastupdated: "2023-10-20"
 
 keywords: managing actions, manage, activation, action logs, changing runtime, delete, namespace, cli, rule, trigger, deployment, list, package, property, sdk, service
 
@@ -15,6 +15,9 @@ subcollection: cloud-functions-cli-plugin
 
 # {{site.data.keyword.openwhisk_short}} CLI 
 {: #functions-cli}
+
+{{site.data.keyword.openwhisk}} is deprecated. As of 28 December 2023, you can't create new function instances, and access to free instances will be removed. Existing premium plan function instances are supported until October 2024. Any function instances that still exist on that date will be deleted. For more information, see [Deprecation overview](/docs/openwhisk?topic=openwhisk-dep-overview).
+{: deprecated}
 
 Run these commands to manage the entities that make up your functions.
 {: shortdec}
@@ -1261,6 +1264,9 @@ ibmcloud fn property get --auth
 Set a property. At least one option is required. After a property is set, it is retained on your workstation at `<home_dir>/.bluemix/plugins/cloud-functions/config.json`. To remove a property, run [`ibmcloud fn property unset --<property>`](#cli_prop_set).
 {: shortdec}
 
+
+
+
 ```sh
 ibmcloud fn property set [--auth KEY] [--cert STRING] [--key STRING] [--namespace NAMESPACE]
 ```
@@ -1279,7 +1285,7 @@ ibmcloud fn property set [--auth KEY] [--cert STRING] [--key STRING] [--namespac
 :    The `wsk` client `KEY`. This value is optional.
 
 `--namespace` `NAMESPACE`
-:    An IAM namespace name or ID. This option cannot be set for Cloud Foundry namespaces. This value is optional.
+:    An IAM-enabled namespace name or ID.
 
 
 #### Example

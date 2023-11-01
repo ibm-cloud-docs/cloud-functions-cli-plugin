@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-10-20"
+lastupdated: "2023-11-01"
 
 keywords: managing actions, manage, activation, action logs, changing runtime, delete, namespace, cli, rule, trigger, deployment, list, package, property, sdk, service
 
@@ -1265,6 +1265,9 @@ Set a property. At least one option is required. After a property is set, it is 
 {: shortdec}
 
 
+You can target a Cloud Foundry-based namespace by running `ibmcloud fn property set --namespace <namespace_name_or_ID>`.
+{: note}
+
 
 
 ```sh
@@ -1285,7 +1288,7 @@ ibmcloud fn property set [--auth KEY] [--cert STRING] [--key STRING] [--namespac
 :    The `wsk` client `KEY`. This value is optional.
 
 `--namespace` `NAMESPACE`
-:    An IAM-enabled namespace name or ID.
+:    An IAM-enabled namespace name or ID, or Cloud Foundry-based namespace name.
 
 
 #### Example
